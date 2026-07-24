@@ -11,7 +11,6 @@ from pathlib import Path, PurePosixPath
 PREFIX = PurePosixPath("process-discovery-cash-v6")
 REQUIRED = {
     PREFIX / ".python-version",
-    PREFIX / "CITATION.cff",
     PREFIX / "LICENSE",
     PREFIX / "Makefile",
     PREFIX / "README.md",

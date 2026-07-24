@@ -10,7 +10,7 @@ import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CANONICAL_REPOSITORY = "https://github.com/pascalmad/process-mining-cash"
+CANONICAL_REPOSITORY = "https://github.com/FlopGrogu/cash-process-discovery"
 RELEASE_VERSION = "6.0.0"
 PYTHON_VERSION = "3.11.15"
 TEXT_SUFFIXES = {
@@ -35,6 +35,7 @@ FORBIDDEN_TEXT = (
     "/nfs/data8/",
     "<repository-url>",
     "<repo-url>",
+    "github.com/pascalmad/process-mining-cash",
     "github.com/pascaldinh/process-mining-cash",
     "configs/cluster/slurm_defaults.yaml",
     "configs/experiments/v1/",
@@ -57,7 +58,6 @@ FORBIDDEN_TEXT = (
 )
 REQUIRED_FILES = (
     ".python-version",
-    "CITATION.cff",
     "LICENSE",
     "README.md",
     "THIRD_PARTY_NOTICES.md",
@@ -103,16 +103,35 @@ SECRET_FILENAMES = {
 
 
 def submission_files() -> list[Path]:
+    git_root = Path(
+        subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    ).resolve()
+    project_pathspec = ROOT.resolve().relative_to(git_root).as_posix()
     result = subprocess.run(
-        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
-        cwd=ROOT,
+        [
+            "git",
+            "ls-files",
+            "--cached",
+            "--others",
+            "--exclude-standard",
+            "-z",
+            "--",
+            project_pathspec,
+        ],
+        cwd=git_root,
         check=True,
         capture_output=True,
     )
     return [
-        ROOT / item.decode()
+        git_root / item.decode()
         for item in result.stdout.split(b"\0")
-        if item and (ROOT / item.decode()).is_file()
+        if item and (git_root / item.decode()).is_file()
     ]
 
 
@@ -149,14 +168,6 @@ def _metadata_errors() -> list[str]:
         errors.append("release/v6.json primary_v6_configs must be 30")
     if inventory.get("default_run_survey_rows") != 210:
         errors.append("release/v6.json default_run_survey_rows must be 210")
-
-    citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
-    for expected in (
-        f"version: {RELEASE_VERSION}",
-        f'repository-code: "{CANONICAL_REPOSITORY}"',
-    ):
-        if expected not in citation:
-            errors.append(f"CITATION.cff is missing {expected!r}")
 
     if (ROOT / ".python-version").read_text(encoding="utf-8").strip() != PYTHON_VERSION:
         errors.append(f".python-version must contain {PYTHON_VERSION}")

@@ -1,7 +1,7 @@
 {
   "artifact": "process-discovery-cash",
   "release": "6.0.0",
-  "repository": "https://github.com/pascalmad/process-mining-cash",
+  "repository": "https://github.com/FlopGrogu/cash-process-discovery",
   "python": "3.11.15",
   "gedi": "1.0.8",
   "split_miner_jar": {

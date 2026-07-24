@@ -188,7 +188,7 @@ export RAYON_NUM_THREADS="${RAYON_NUM_THREADS:-1}"
 
 if [[ ! -d "${PROJECT_ROOT}/src" ]] \
   || [[ ! -f "${PROJECT_ROOT}/scripts/run_hpo_study.py" ]]; then
-  fail "PROJECT_ROOT does not look like the process-mining-cash repository: ${PROJECT_ROOT}"
+  fail "PROJECT_ROOT does not look like the cash-process-discovery training_data project: ${PROJECT_ROOT}"
 fi
 
 cd "${PROJECT_ROOT}"

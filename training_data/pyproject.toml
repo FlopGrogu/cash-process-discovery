@@ -29,7 +29,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/pascalmad/process-mining-cash"
+Repository = "https://github.com/FlopGrogu/cash-process-discovery"
 
 [project.optional-dependencies]
 dev = [

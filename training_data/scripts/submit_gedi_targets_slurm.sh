@@ -373,7 +373,7 @@ if [[ ! -d "${PROJECT_ROOT}/src" ]] \
   || [[ ! -d "${PROJECT_ROOT}/scripts" ]] \
   || [[ ! -d "${PROJECT_ROOT}/slurm" ]] \
   || [[ ! -f "${PROJECT_ROOT}/slurm/run_gedi_target.sh" ]]; then
-  fail "PROJECT_ROOT does not look like the process-mining-cash repository: ${PROJECT_ROOT}"
+  fail "PROJECT_ROOT does not look like the cash-process-discovery training_data project: ${PROJECT_ROOT}"
 fi
 
 cd "${PROJECT_ROOT}"

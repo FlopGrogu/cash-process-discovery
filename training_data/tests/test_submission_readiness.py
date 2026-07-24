@@ -18,7 +18,7 @@ import process_discovery_cash.cli.generate_feature_space_logs as generation_cli
 from process_discovery_cash.generation.gedi_backend import DEFAULT_GEDI_PYTHON
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-CANONICAL_REPOSITORY = "https://github.com/pascalmad/process-mining-cash"
+CANONICAL_REPOSITORY = "https://github.com/FlopGrogu/cash-process-discovery"
 ARCHIVE_VERIFIER_SPEC = spec_from_file_location(
     "verify_submission_archive",
     PROJECT_ROOT / "scripts/verify_submission_archive.py",
@@ -27,13 +27,18 @@ assert ARCHIVE_VERIFIER_SPEC is not None and ARCHIVE_VERIFIER_SPEC.loader is not
 ARCHIVE_VERIFIER = module_from_spec(ARCHIVE_VERIFIER_SPEC)
 ARCHIVE_VERIFIER_SPEC.loader.exec_module(ARCHIVE_VERIFIER)
 verify_archive = ARCHIVE_VERIFIER.verify_archive
+AUDIT_SPEC = spec_from_file_location(
+    "audit_submission",
+    PROJECT_ROOT / "scripts/audit_submission.py",
+)
+assert AUDIT_SPEC is not None and AUDIT_SPEC.loader is not None
+AUDIT = module_from_spec(AUDIT_SPEC)
+AUDIT_SPEC.loader.exec_module(AUDIT)
 
 
 def test_release_metadata_and_dependency_authorities_are_consistent() -> None:
     pyproject = tomllib.loads((PROJECT_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     release = json.loads((PROJECT_ROOT / "release/v6.json").read_text(encoding="utf-8"))
-    citation = (PROJECT_ROOT / "CITATION.cff").read_text(encoding="utf-8")
-
     assert pyproject["project"]["version"] == release["release"] == "6.0.0"
     assert pyproject["project"]["urls"]["Repository"] == CANONICAL_REPOSITORY
     assert release["repository"] == CANONICAL_REPOSITORY
@@ -42,7 +47,6 @@ def test_release_metadata_and_dependency_authorities_are_consistent() -> None:
     assert release["canonical_inventory"]["primary_v6_configs"] == 30
     assert "hpo_logs" not in release["canonical_inventory"]
     assert "final_" + "bench" + "mark_rows" not in release["canonical_inventory"]
-    assert f'repository-code: "{CANONICAL_REPOSITORY}"' in citation
     assert (PROJECT_ROOT / "requirements.txt").is_file()
     assert (PROJECT_ROOT / "environments/gedi/requirements.txt").is_file()
     assert not list(PROJECT_ROOT.glob("*.csv"))
@@ -60,6 +64,21 @@ def test_release_metadata_and_dependency_authorities_are_consistent() -> None:
     assert receipt_ledger["primary_manifest_count"] == 30
     assert receipt_ledger["survey_manifest_count"] == 10
     assert receipt_ledger["hpo_study_manifest_count"] == 6
+
+
+def test_quick_start_uses_canonical_clone_and_nested_project_directory() -> None:
+    readme = (PROJECT_ROOT / "README.md").read_text(encoding="utf-8")
+
+    assert "git clone https://github.com/FlopGrogu/cash-process-discovery.git" in readme
+    assert "cd cash-process-discovery/training_data" in readme
+
+
+def test_submission_inventory_is_scoped_to_nested_project() -> None:
+    files = AUDIT.submission_files()
+
+    assert PROJECT_ROOT / "README.md" in files
+    assert files
+    assert all(path.is_relative_to(PROJECT_ROOT) for path in files)
 
 
 def test_make_workflows_use_plain_python_and_xes_sources() -> None:
@@ -238,7 +257,6 @@ def test_archive_verifier_accepts_source_only_and_rejects_data(
     allowed = {
         "process-discovery-cash-v6/.python-version": "3.11.15\n",
         "process-discovery-cash-v6/Apptainer.def": "Bootstrap: docker\n",
-        "process-discovery-cash-v6/CITATION.cff": "citation\n",
         "process-discovery-cash-v6/Dockerfile": "FROM scratch\n",
         "process-discovery-cash-v6/LICENSE": "license\n",
         "process-discovery-cash-v6/Makefile": "check:\n",

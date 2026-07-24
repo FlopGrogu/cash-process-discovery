@@ -29,7 +29,9 @@ def test_run_manifest_row_has_portable_paths_and_array_validation() -> None:
     assert 'PROJECT_ROOT="${PROJECT_ROOT:-$(pwd)}"' not in text
     assert 'SCRIPT_PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"' in text
     assert 'PROJECT_ROOT="${PROJECT_ROOT:-${SCRIPT_PROJECT_ROOT}}"' in text
-    assert "PROJECT_ROOT does not look like the process-mining-cash repository" in text
+    assert (
+        "PROJECT_ROOT does not look like the cash-process-discovery training_data project" in text
+    )
     assert 'echo "PWD=$(pwd)"' in text
     assert 'echo "MANIFEST_PATH=${MANIFEST_PATH}"' in text
     assert '[[ -n "${SLURM_ARRAY_TASK_ID:-}" ]] || fail "SLURM_ARRAY_TASK_ID is not set"' in text
@@ -393,7 +395,9 @@ def test_run_metric_row_has_portable_paths_and_array_validation() -> None:
     assert 'PROJECT_ROOT="${PROJECT_ROOT:-$(pwd)}"' not in text
     assert 'SCRIPT_PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"' in text
     assert 'PROJECT_ROOT="${PROJECT_ROOT:-${SCRIPT_PROJECT_ROOT}}"' in text
-    assert "PROJECT_ROOT does not look like the process-mining-cash repository" in text
+    assert (
+        "PROJECT_ROOT does not look like the cash-process-discovery training_data project" in text
+    )
     assert '[[ -n "${SLURM_ARRAY_TASK_ID:-}" ]] || fail "SLURM_ARRAY_TASK_ID is not set"' in text
     assert "ACTUAL_ARRAY_TASK_ID=$((METRIC_MANIFEST_ROW_OFFSET + SLURM_ARRAY_TASK_ID))" in text
     assert 'echo "METRIC_MANIFEST_ROW_OFFSET=${METRIC_MANIFEST_ROW_OFFSET}"' in text
@@ -1460,7 +1464,9 @@ def test_run_gedi_target_has_portable_paths_and_array_validation() -> None:
     assert 'PROJECT_ROOT="${PROJECT_ROOT:-$(pwd)}"' not in text
     assert 'SCRIPT_PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"' in text
     assert 'PROJECT_ROOT="${PROJECT_ROOT:-${SCRIPT_PROJECT_ROOT}}"' in text
-    assert "PROJECT_ROOT does not look like the process-mining-cash repository" in text
+    assert (
+        "PROJECT_ROOT does not look like the cash-process-discovery training_data project" in text
+    )
     assert '[[ -n "${SLURM_ARRAY_TASK_ID:-}" ]] || fail "SLURM_ARRAY_TASK_ID is not set"' in text
     assert "ACTUAL_ROW=$((GEDI_ROW_OFFSET + SLURM_ARRAY_TASK_ID))" in text
     assert 'echo "GEDI_ROW_OFFSET=${GEDI_ROW_OFFSET}"' in text

@@ -13,9 +13,26 @@ DESTINATION = ROOT / "submission-dist" / "process-discovery-cash-v6.tar.gz"
 
 
 def main() -> None:
+    git_root = Path(
+        subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    ).resolve()
+    project_pathspec = ROOT.resolve().relative_to(git_root).as_posix()
     status = subprocess.run(
-        ["git", "status", "--porcelain", "--untracked-files=normal"],
-        cwd=ROOT,
+        [
+            "git",
+            "status",
+            "--porcelain",
+            "--untracked-files=normal",
+            "--",
+            project_pathspec,
+        ],
+        cwd=git_root,
         check=True,
         capture_output=True,
         text=True,
@@ -37,9 +54,9 @@ def main() -> None:
             "--format=tar.gz",
             "--prefix=process-discovery-cash-v6/",
             f"--output={DESTINATION}",
-            "HEAD",
+            f"HEAD:{project_pathspec}",
         ],
-        cwd=ROOT,
+        cwd=git_root,
         check=True,
     )
     digest = hashlib.sha256(DESTINATION.read_bytes()).hexdigest()

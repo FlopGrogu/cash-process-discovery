@@ -6,7 +6,6 @@ From: eclipse-temurin:8u462-b08-jre-jammy
     org.opencontainers.image.version 6.0.0
 
 %files
-    CITATION.cff /app/CITATION.cff
     LICENSE /app/LICENSE
     README.md /app/README.md
     THIRD_PARTY_NOTICES.md /app/THIRD_PARTY_NOTICES.md

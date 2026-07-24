@@ -14,12 +14,12 @@ cp .env.example .env
 ```
 
 ```dotenv
-PROJECT_ROOT=/shared/projects/process-mining-cash
+PROJECT_ROOT=/shared/projects/cash-process-discovery/training_data
 DATA_ROOT=/shared/data/process-mining-cash-v6
 RESULTS_ROOT=/scratch/process-mining-cash-v6
 LOG_ROOT=/scratch/process-mining-cash-v6/slurm
 SPLIT_MINER_JAR=/shared/tools/split-miner-1.7.1-all.jar
-GEDI_PYTHON=/shared/projects/process-mining-cash/.venv-gedi/bin/python
+GEDI_PYTHON=/shared/projects/cash-process-discovery/training_data/.venv-gedi/bin/python
 DISCOVERY_PARTITION=CPU
 DISCOVERY_QOS=minor_student
 DISCOVERY_TIME=24:00:00

@@ -468,7 +468,9 @@ def main() -> None:
         "axes": TARGET_FEATURES,
         "log10_axes": sorted(LOG10_FEATURES),
         "standardization": "mean and population standard deviation fitted on real logs",
-        "pca_fit": "all real, augmented, and accepted synthetic logs after real-log standardization",
+        "pca_fit": (
+            "all real, augmented, and accepted synthetic logs after real-log standardization"
+        ),
         "explained_variance_ratio": pca.explained_variance_ratio_.tolist(),
         "counts": projected.groupby("group").size().to_dict(),
         "components": {

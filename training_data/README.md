@@ -12,8 +12,8 @@ environments because they intentionally pin incompatible NumPy, SciPy, and
 PM4Py versions.
 
 ```bash
-git clone https://github.com/pascalmad/process-mining-cash.git
-cd process-mining-cash
+git clone https://github.com/FlopGrogu/cash-process-discovery.git
+cd cash-process-discovery/training_data
 
 python -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
@@ -154,5 +154,5 @@ Further details:
 - Optional: [`docs/hpo.md`](docs/hpo.md)
 - [`docs/cluster.md`](docs/cluster.md)
 
-Please cite the artifact using [`CITATION.cff`](CITATION.cff). Third-party
-provenance is recorded in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+Third-party provenance is recorded in
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
