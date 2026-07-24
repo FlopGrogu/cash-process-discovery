@@ -11,24 +11,25 @@ jobs:
   acceptance:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: training_data
     env:
       PYTHONHASHSEED: "0"
-      UV_FROZEN: "1"
     steps:
       - name: Check out source
         uses: actions/checkout@v6
 
-      - name: Install pinned uv and Python
-        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - name: Install Python
+        uses: actions/setup-python@v6
         with:
-          version: "0.8.13"
           python-version: "3.11.15"
-          enable-cache: true
-          cache-dependency-glob: |
-            uv.lock
-            environments/gedi/uv.lock
+          cache: pip
+          cache-dependency-path: |
+            training_data/requirements.txt
+            training_data/environments/gedi/requirements.txt
 
-      - name: Install frozen environments
+      - name: Install pinned environments
         run: make env
 
       - name: Run v6 acceptance checks
@@ -37,7 +38,7 @@ jobs:
       - name: Confirm checks did not mutate tracked source
         run: git diff --exit-code
 
-      - name: Build source-only submission archive
+      - name: Build source-only submission archive deterministically
         shell: bash
         run: |
           make submission-archive
@@ -47,7 +48,6 @@ jobs:
           test "${first_sha}" = "${second_sha}"
 
       - name: Validate archive checksum and contents
-        shell: bash
-        run: |
-          python scripts/verify_submission_archive.py \
-            submission-dist/process-discovery-cash-v6.tar.gz
+        run: >-
+          python scripts/verify_submission_archive.py
+          submission-dist/process-discovery-cash-v6.tar.gz

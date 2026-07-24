@@ -30,7 +30,6 @@ Run the data-generation stages in fresh cluster storage roots as described in
 - Slurm job IDs and `sacct` resource summaries for external smoke runs;
 - the source archive SHA-256 and successful archive-verifier output.
 
-The default-run survey and HPO are optional extensions. When requested, verify
-them separately with `make manifests-survey`, `make manifests-hpo`, or
-`make manifests-all`; survey overviews and HPO journals are not required by the
-primary release workflow.
+The default-run survey is an optional extension and can be verified with
+`make manifests-survey` or `make manifests-all`. Deprecated HPO artifacts are
+not part of release validation or submission.

@@ -6,6 +6,5 @@ The v6 synthetic stage uses the fixed 48-feature anchor, a deterministic
 
 The target design, target/child identifiers, generated XES serialization,
 acceptance decisions, and checksums are deterministic. Runtime diagnostics are
-kept separate. Generated logs feed the primary synthetic-explore runs. Optional
-HPO can reuse the same inventory; baselines and the optional default-run survey
-use only the 21 real logs.
+kept separate. Generated logs feed the primary synthetic-explore runs. The
+other supported real-log workflows use only the 21 real logs.

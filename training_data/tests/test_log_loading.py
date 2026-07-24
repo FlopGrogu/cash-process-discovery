@@ -90,6 +90,31 @@ def test_xes_parser_errors_are_not_hidden_by_minimal_fallback(monkeypatch) -> No
         load_event_log("data/example/tiny_log.xes", use_cache=False)
 
 
+def test_xes_loader_retries_iterparse_after_chunk_regex_index_error(monkeypatch) -> None:
+    import pm4py
+
+    calls = []
+    dataframe = _minimal_dataframe()
+
+    def read_xes(path, **kwargs):
+        calls.append((path, kwargs))
+        if kwargs["variant"] == "chunk_regex":
+            raise IndexError("list index out of range")
+        return dataframe
+
+    monkeypatch.setattr(pm4py, "read_xes", read_xes)
+
+    loaded = load_event_log_with_info("data/example/tiny_log.xes", use_cache=False)
+
+    assert_frame_equal(loaded.log, dataframe, check_dtype=False)
+    assert loaded.backend == "iterparse_fallback"
+    assert [kwargs["variant"] for _path, kwargs in calls] == [
+        "chunk_regex",
+        "iterparse",
+    ]
+    assert all(kwargs["show_progress_bar"] is False for _path, kwargs in calls)
+
+
 def test_parquet_cache_preserves_order_values_and_types(tmp_path) -> None:
     source = _write_typed_xes(tmp_path / "typed.xes")
     cache_dir = tmp_path / "cache"

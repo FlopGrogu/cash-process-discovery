@@ -5,7 +5,10 @@ from pathlib import Path
 
 import yaml
 
-from process_discovery_cash.cli.verify_inputs import verify_dataset_inputs
+from process_discovery_cash.cli.verify_inputs import (
+    verify_dataset_inputs,
+    verify_split_miner_jar,
+)
 from process_discovery_cash.data.preprocessing.catalog import load_dataset_catalog
 
 
@@ -61,3 +64,17 @@ def test_verify_inputs_reports_missing_and_mismatched_files(tmp_path: Path) -> N
         catalog_path=_catalog(tmp_path, source, sha256="0" * 64, size=5),
     )
     assert mismatch_records[0]["status"] == "mismatch"
+
+
+def test_verify_split_miner_jar_checks_presence_without_checksum(tmp_path: Path) -> None:
+    jar = tmp_path / "split-miner-1.7.1-all.jar"
+
+    missing = verify_split_miner_jar(jar)
+    assert missing["status"] == "missing"
+
+    jar.write_bytes(b"runtime decides whether this is a working JAR")
+    present = verify_split_miner_jar(jar)
+    assert present["status"] == "ok"
+    assert present["actual_size_bytes"] == jar.stat().st_size
+    assert "actual_sha256" not in present
+    assert "expected_sha256" not in present

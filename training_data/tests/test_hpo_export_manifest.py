@@ -16,6 +16,8 @@ from process_discovery_cash.hpo.trial_runner import (
     trial_config_hash,
 )
 
+pytestmark = pytest.mark.legacy_hpo
+
 _CONFIG_TEMPLATE = """
 experiment_id: hpo_export_test
 logs:

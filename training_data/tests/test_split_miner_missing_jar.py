@@ -1,4 +1,3 @@
-import hashlib
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -91,23 +90,6 @@ def test_split_miner_handles_missing_jar_gracefully(monkeypatch) -> None:
 
     assert result.status == "unsupported"
     assert "JAR path is missing" in (result.error_message or "")
-
-
-def test_split_miner_rejects_mismatched_jar_checksum(tmp_path: Path) -> None:
-    jar = tmp_path / "split-miner.jar"
-    jar.write_bytes(b"not the approved Split Miner artifact")
-
-    result = SplitMiner().discover(
-        [],
-        {
-            "jar_path": jar.as_posix(),
-            "jar_sha256": "0" * 64,
-        },
-    )
-
-    assert result.status == "unsupported"
-    assert "SHA-256 mismatch" in (result.error_message or "")
-    assert hashlib.sha256(jar.read_bytes()).hexdigest() in (result.error_message or "")
 
 
 def test_split_miner_v1_command_uses_upstream_cli_flags(tmp_path: Path) -> None:

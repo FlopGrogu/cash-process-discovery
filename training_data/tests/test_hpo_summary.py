@@ -12,6 +12,8 @@ from process_discovery_cash.hpo.study_manifest import (
 from process_discovery_cash.hpo.summary import build_study_summary, write_study_summary
 from process_discovery_cash.hpo.trial_runner import StudyContext
 
+pytestmark = pytest.mark.legacy_hpo
+
 _CONFIG_TEMPLATE = """
 experiment_id: hpo_summary_test
 logs:

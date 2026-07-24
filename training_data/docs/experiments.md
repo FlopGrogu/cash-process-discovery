@@ -7,7 +7,7 @@ Only `configs/experiments/v6/` is supported:
 | `baseline` | 10 | primary | one configuration on 21 real logs |
 | `explore` | 10 | primary | real plus accepted augmented exploration |
 | `explore_synthetic` | 10 | primary | accepted GEDI synthetic exploration |
-| `hpo` | 6 | optional | per-log Optuna studies |
+| `hpo` | 6 | deprecated | legacy per-log Optuna studies |
 | `default_run_survey` | 10 | optional | default configurations on 21 real logs |
 
 Generic generation accepts ordinary configs only:
@@ -18,7 +18,7 @@ Generic generation accepts ordinary configs only:
   --output build/alpha-classic.csv
 ```
 
-Passing an HPO config fails immediately with the correct routing command.
+Passing a legacy HPO config fails immediately with the compatibility command.
 
 Generate the 30 primary baseline and explore manifests without changing the
 repository:
@@ -34,17 +34,17 @@ Check primary receipts in an automatic temporary directory:
 .venv/bin/python scripts/manifest_receipts.py --check --scope primary
 ```
 
-The optional scopes are explicit:
+The supported optional survey scope is explicit:
 
 ```bash
 make manifests-survey
-make manifests-hpo
 make manifests-all
 ```
 
 `--all` remains available on `generate_v6_manifests.py` for the 40 ordinary
-primary-plus-survey manifests. HPO study generation continues to use
-`generate_hpo_studies.py`.
+primary-plus-survey manifests. The deprecated `make manifests-hpo` target and
+`generate_hpo_studies.py` remain only for reproducing earlier runs; neither is
+required by validation or submission.
 
 Manifests contain only portable `data/`, `results/`, and `logs/slurm/` paths.
 `log_path` and `test_log_path` are authoritative XES references. Optimized

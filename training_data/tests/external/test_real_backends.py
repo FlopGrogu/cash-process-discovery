@@ -12,9 +12,6 @@ from process_discovery_cash.generation.targets import TargetSpec
 
 pytestmark = pytest.mark.external
 
-SPLIT_MINER_SHA256 = "472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328"
-
-
 def test_real_gedi_environment_generates_xes(tmp_path: Path) -> None:
     backend = GediBackend(
         python_bin=".venv-gedi/bin/python",
@@ -65,7 +62,6 @@ def test_split_miner_171_with_java8_discovers_tiny_log(tmp_path: Path) -> None:
         [],
         {
             "jar_path": "data/external/split-miner-1.7.1-all.jar",
-            "jar_sha256": SPLIT_MINER_SHA256,
             "java_bin": java_bin,
             "input_log_path": "data/example/tiny_log.xes",
             "output_dir": (tmp_path / "split").as_posix(),

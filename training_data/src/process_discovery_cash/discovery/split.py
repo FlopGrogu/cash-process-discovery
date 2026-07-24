@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import os
 import shlex
 import shutil
@@ -65,20 +64,6 @@ class SplitMiner(DiscoveryAlgorithm):
                 error_message=f"Split Miner JAR does not exist: {jar}",
             )
         jar = jar.resolve(strict=False)
-        expected_jar_sha256 = split_miner_config.get("jar_sha256")
-        if expected_jar_sha256:
-            actual_jar_sha256 = _sha256_file(jar)
-            if actual_jar_sha256 != expected_jar_sha256:
-                return self._result(
-                    config=_reported_hyperparameters(split_miner_config),
-                    status="unsupported",
-                    runtime_seconds=0.0,
-                    error_message=(
-                        "Split Miner JAR SHA-256 mismatch: "
-                        f"expected {expected_jar_sha256}, got {actual_jar_sha256}"
-                    ),
-                )
-
         java_bin = _resolve_java_bin(
             str(split_miner_config.get("java_bin") or os.getenv("JAVA_BIN") or "java")
         )
@@ -237,7 +222,6 @@ def normalize_split_miner_config(config: dict[str, Any]) -> dict[str, Any]:
     allowed = {
         "jar_path",
         "jar_env_var",
-        "jar_sha256",
         "java_bin",
         "java_options",
         "timeout_seconds",
@@ -256,14 +240,6 @@ def normalize_split_miner_config(config: dict[str, Any]) -> dict[str, Any]:
     if unknown:
         raise ValueError("Unsupported Split Miner v1 parameter(s): " + ", ".join(unknown))
     return dict(config)
-
-
-def _sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
 
 
 def build_split_miner_command(

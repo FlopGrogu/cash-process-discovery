@@ -18,7 +18,7 @@ Deterministic artifacts include:
 - the 48-feature vectors and feature anchor;
 - the 200 GEDI targets and all seed derivations;
 - accepted/rejected generated-log records and checksums;
-- primary and metric manifest bytes, plus optional survey and HPO manifests;
+- primary and metric manifest bytes, plus optional survey manifests;
 - source-XES-based run configuration identities.
 
 Volatile execution metadata—timestamps, elapsed time, host/job IDs, resource
@@ -35,9 +35,10 @@ Run:
 make check
 ```
 
-This runs Ruff, non-external tests, exact regeneration of the 30 primary
-manifest receipts, and the submission audit with `.venv/bin/python`. HPO and
-the default-run survey are not generated. Use `make manifests-hpo`,
-`make manifests-survey`, or `make manifests-all` when those optional scopes are
-needed. External checks are listed in
+This runs Ruff, supported non-external tests, exact regeneration of the 30
+primary manifest receipts, and the submission audit with `.venv/bin/python`.
+The default-run survey is not generated; use `make manifests-survey` or
+`make manifests-all` when it is needed. Deprecated HPO tooling and its tests
+are retained only for compatibility and are not part of this reproducibility
+contract. External checks are listed in
 [external-validation.md](external-validation.md).

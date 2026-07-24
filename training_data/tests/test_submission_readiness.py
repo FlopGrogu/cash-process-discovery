@@ -45,10 +45,24 @@ def test_release_metadata_and_dependency_authorities_are_consistent() -> None:
     assert release["canonical_inventory"]["default_run_survey_rows"] == 210
     assert release["canonical_inventory"]["total_event_logs"] == 215
     assert release["canonical_inventory"]["primary_v6_configs"] == 30
+    assert "hpo_v6_configs" not in release["canonical_inventory"]
+    assert release["deprecated_legacy"]["hpo_v6_configs"] == 6
     assert "hpo_logs" not in release["canonical_inventory"]
     assert "final_" + "bench" + "mark_rows" not in release["canonical_inventory"]
     assert (PROJECT_ROOT / "requirements.txt").is_file()
+    core_requirements = (PROJECT_ROOT / "requirements.txt").read_text(encoding="utf-8")
+    legacy_requirements = (PROJECT_ROOT / "requirements-hpo.txt").read_text(
+        encoding="utf-8"
+    )
+    assert "optuna==" not in core_requirements
+    assert "optuna==4.9.0" in legacy_requirements
+    assert "optuna==4.9.0" not in pyproject["project"]["dependencies"]
+    assert pyproject["project"]["optional-dependencies"]["legacy-hpo"] == [
+        "optuna==4.9.0"
+    ]
     assert (PROJECT_ROOT / "environments/gedi/requirements.txt").is_file()
+    for obsolete in AUDIT.OBSOLETE_PATHS:
+        assert not (PROJECT_ROOT / obsolete).exists()
     assert not list(PROJECT_ROOT.glob("*.csv"))
     assert len(
         list(
@@ -92,6 +106,13 @@ def test_make_workflows_use_plain_python_and_xes_sources() -> None:
     assert "generate_hpo_studies.py" not in manifests_recipe
     assert "manifest_receipts.py --check --scope primary" in manifests_recipe
     assert "manifests-hpo:" in makefile
+    hpo_recipe = makefile.split("manifests-hpo:", 1)[1].split("manifests-all:", 1)[0]
+    assert "deprecated legacy tooling" in hpo_recipe
+    all_recipe = makefile.split("manifests-all:", 1)[1].split("check:", 1)[0]
+    assert "generate_hpo_studies.py" not in all_recipe
+    assert "manifest_receipts.py --check --scope hpo" not in all_recipe
+    check_recipe = makefile.split("check:", 1)[1].split("submission-archive:", 1)[0]
+    assert 'pytest -m "not external and not legacy_hpo"' in check_recipe
     assert "uv " not in makefile
     assert "pdcash-preprocess-event-logs" not in makefile
 
@@ -256,14 +277,11 @@ def test_archive_verifier_accepts_source_only_and_rejects_data(
 ) -> None:
     allowed = {
         "process-discovery-cash-v6/.python-version": "3.11.15\n",
-        "process-discovery-cash-v6/Apptainer.def": "Bootstrap: docker\n",
-        "process-discovery-cash-v6/Dockerfile": "FROM scratch\n",
         "process-discovery-cash-v6/LICENSE": "license\n",
         "process-discovery-cash-v6/Makefile": "check:\n",
         "process-discovery-cash-v6/README.md": "readme\n",
         "process-discovery-cash-v6/THIRD_PARTY_NOTICES.md": "notices\n",
         "process-discovery-cash-v6/docs/cluster.md": "cluster\n",
-        "process-discovery-cash-v6/environments/gedi/pyproject.toml": "[project]\n",
         "process-discovery-cash-v6/environments/gedi/requirements.txt": "gedi==1.0.8\n",
         "process-discovery-cash-v6/pyproject.toml": "[project]\n",
         "process-discovery-cash-v6/requirements.txt": "pm4py==2.7.22.2\n",
@@ -271,6 +289,7 @@ def test_archive_verifier_accepts_source_only_and_rejects_data(
         "process-discovery-cash-v6/release/v6.json": "{}\n",
         "process-discovery-cash-v6/scripts/audit_submission.py": "pass\n",
         "process-discovery-cash-v6/scripts/verify_submission_archive.py": "pass\n",
+        "process-discovery-cash-v6/requirements-hpo.txt": "optuna==4.9.0\n",
         "process-discovery-cash-v6/data/example/tiny_log.xes": "<log />\n",
         "process-discovery-cash-v6/data/raw/.gitkeep": "",
         "process-discovery-cash-v6/results/README.md": "results\n",

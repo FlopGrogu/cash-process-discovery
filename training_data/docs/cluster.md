@@ -186,11 +186,12 @@ The wrapper validates `targets.csv` and `anchor_features.csv`, exports the
 fixed seed/trial controls, and writes one result record per target. Re-submit
 missing or failed row ranges, then aggregate once all 200 targets have records.
 
-## Optional HPO row semantics
+## Deprecated HPO compatibility
 
-HPO study manifests contain 215 rows. One Slurm array task owns one study row
-(one log/algorithm pair); `NUM_WORKERS` controls concurrent Optuna trials
-inside that study:
+This legacy workflow is not required for validation or submission. When
+reproducing an earlier HPO run, its study manifests contain 215 rows. One
+Slurm array task owns one study row (one log/algorithm pair); `NUM_WORKERS`
+controls concurrent Optuna trials inside that study:
 
 ```bash
 WORKER_WALLTIME_SECONDS=28800 bash slurm/run_hpo_study.slurm \
@@ -259,5 +260,5 @@ revision.
    outcomes, Slurm resource evidence, and final archive checksum with the
    submission.
 
-The survey and HPO may be run afterwards with `make manifests-survey` and
-`make manifests-hpo`; neither is a release prerequisite.
+The survey may be run afterwards with `make manifests-survey`. Deprecated HPO
+tooling is retained only for compatibility and is not a release prerequisite.

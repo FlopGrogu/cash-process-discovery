@@ -122,9 +122,6 @@ def test_v6_default_run_survey_runs_every_algorithm_variant_at_its_defaults() ->
             "split_miner",
             {
                 "jar_path": "data/external/split-miner-1.7.1-all.jar",
-                "jar_sha256": (
-                    "472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328"
-                ),
                 "jar_env_var": "SPLIT_MINER_JAR",
                 "java_bin": None,
                 "java_options": [

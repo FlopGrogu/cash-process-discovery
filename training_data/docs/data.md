@@ -153,7 +153,7 @@ The verifier checks the committed expected counts (21 real, 77 augmented, 200
 GEDI targets, 117 accepted synthetic, and 215 total event logs), portable
 `data/...` output paths, uniqueness, and every generated file against the
 `artifact_sha256` in its deterministic manifest. The JSON receipt calls the
-combined count `total_event_logs`; HPO is not a data-generation stage. The
-verifier also emits a combined generated-artifact receipt hash for the release
-record. Generated inputs, manifests, and results are intentionally ignored by
-Git.
+combined count `total_event_logs`. Deprecated HPO tooling is not a
+data-generation stage. The verifier also emits a combined generated-artifact
+receipt hash for the release record. Generated inputs, manifests, and results
+are intentionally ignored by Git.

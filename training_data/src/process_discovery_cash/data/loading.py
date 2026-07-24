@@ -265,15 +265,23 @@ def _load_xes_dataframe(path: Path) -> tuple[Any, str]:
     # The Rust parser remains pinned and is used explicitly by
     # `preprocess_event_log`, where its output is captured in a checksummed
     # Parquet artifact.
-    return (
-        _canonicalize_dataframe(
-            pm4py.read_xes(
-                str(path),
-                variant="chunk_regex",
-                return_legacy_log_object=False,
-            )
-        ),
-        "chunk_regex",
+    try:
+        return _read_xes_with_pm4py(pm4py, path, variant="chunk_regex"), "chunk_regex"
+    except IndexError:
+        # PM4Py's chunk-regex parser assumes every numeric XES attribute match
+        # has a value capture. Some valid real-world logs, including BPI 2012,
+        # violate that parser assumption and fail before discovery starts.
+        return _read_xes_with_pm4py(pm4py, path, variant="iterparse"), "iterparse_fallback"
+
+
+def _read_xes_with_pm4py(pm4py: Any, path: Path, *, variant: str) -> Any:
+    return _canonicalize_dataframe(
+        pm4py.read_xes(
+            str(path),
+            variant=variant,
+            return_legacy_log_object=False,
+            show_progress_bar=False,
+        )
     )
 
 

@@ -17,7 +17,6 @@ TEXT_SUFFIXES = {
     ".cfg",
     ".cff",
     ".csv",
-    ".def",
     ".ini",
     ".json",
     ".md",
@@ -61,12 +60,22 @@ REQUIRED_FILES = (
     "LICENSE",
     "README.md",
     "THIRD_PARTY_NOTICES.md",
-    "environments/gedi/pyproject.toml",
     "environments/gedi/requirements.txt",
     "pyproject.toml",
     "release/v6-manifest-receipts.json",
     "release/v6.json",
+    "requirements-hpo.txt",
     "requirements.txt",
+)
+OBSOLETE_PATHS = (
+    ".dockerignore",
+    ".github/workflows/ci.yml",
+    "Apptainer.def",
+    "Dockerfile",
+    "container",
+    "environments/gedi/pyproject.toml",
+    "environments/gedi/uv.lock",
+    "uv.lock",
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*]\(([^)]+)\)")
 GENERATED_DIRECTORIES = {
@@ -143,6 +152,7 @@ def _metadata_errors() -> list[str]:
     for forbidden in (
         "configs/cluster/slurm_defaults.yaml",
         "configs/experiments/v6/benchmark",
+        *OBSOLETE_PATHS,
     ):
         if (ROOT / forbidden).exists():
             errors.append(f"obsolete dependency/configuration file exists: {forbidden}")
@@ -233,10 +243,7 @@ def main() -> None:
             "experiments/manifests/.gitkeep"
         ):
             errors.append(f"generated manifest is tracked: {relative}")
-        if path.suffix.lower() not in TEXT_SUFFIXES and path.name not in {
-            "Dockerfile",
-            "Makefile",
-        }:
+        if path.suffix.lower() not in TEXT_SUFFIXES and path.name != "Makefile":
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for needle in FORBIDDEN_TEXT:

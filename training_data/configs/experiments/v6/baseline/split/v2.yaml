@@ -14,4 +14,4 @@ algorithms:
     model_type: bpmn
     runtime_params: [timeout_seconds]
     configs:
-      - {jar_path: data/external/split-miner-1.7.1-all.jar, jar_sha256: 472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328, jar_env_var: SPLIT_MINER_JAR, java_bin: null, epsilon: 0.5, eta: 0.5, parallelismFirst: false, removeLoopActivityMarkers: false, replaceIORs: false, diagram: false, timeout_seconds: 240}
+      - {jar_path: data/external/split-miner-1.7.1-all.jar, jar_env_var: SPLIT_MINER_JAR, java_bin: null, epsilon: 0.5, eta: 0.5, parallelismFirst: false, removeLoopActivityMarkers: false, replaceIORs: false, diagram: false, timeout_seconds: 240}

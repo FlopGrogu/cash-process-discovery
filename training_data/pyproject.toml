@@ -25,7 +25,6 @@ dependencies = [
   "tqdm==4.67.3",
   "joblib==1.5.3",
   "pulp==3.3.0",
-  "optuna==4.9.0",
 ]
 
 [project.urls]
@@ -35,6 +34,9 @@ Repository = "https://github.com/FlopGrogu/cash-process-discovery"
 dev = [
   "pytest==9.0.3",
   "ruff==0.15.13",
+]
+legacy-hpo = [
+  "optuna==4.9.0",
 ]
 
 [project.scripts]
@@ -87,4 +89,5 @@ pythonpath = ["src"]
 markers = [
   "integration: self-contained multi-stage integration tests",
   "external: requires non-redistributed data or external research software",
+  "legacy_hpo: deprecated HPO compatibility tests",
 ]

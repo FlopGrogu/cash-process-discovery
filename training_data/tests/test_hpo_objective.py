@@ -5,6 +5,8 @@ from process_discovery_cash.hpo.objective import (
     objective_from_result_payload,
 )
 
+pytestmark = pytest.mark.legacy_hpo
+
 EQUAL_WEIGHTS = {
     "fitness": 1.0,
     "precision": 1.0,

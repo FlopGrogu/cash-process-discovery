@@ -1,8 +1,12 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from process_discovery_cash.cli.hpo_summary import main as hpo_summary_main
 from process_discovery_cash.cli.run_hpo_study import main as run_hpo_study_main
+
+pytestmark = pytest.mark.legacy_hpo
 
 _CONFIG_TEMPLATE = """
 experiment_id: hpo_e2e

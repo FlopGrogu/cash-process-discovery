@@ -1,6 +1,8 @@
 from pathlib import Path
 from types import SimpleNamespace
 
+import pytest
+
 from process_discovery_cash.config.schema import HpoConfig
 from process_discovery_cash.hpo.objective import ObjectiveOutcome
 from process_discovery_cash.hpo.search_space import build_hpo_search_space
@@ -15,6 +17,8 @@ from process_discovery_cash.hpo.study import (
 )
 from process_discovery_cash.hpo.trial_runner import TrialOutcome
 from process_discovery_cash.hpo.worker import run_hpo_worker
+
+pytestmark = pytest.mark.legacy_hpo
 
 
 def _fake_ctx(n_trials: int = 5, per_trial_walltime: float = 10.0) -> SimpleNamespace:

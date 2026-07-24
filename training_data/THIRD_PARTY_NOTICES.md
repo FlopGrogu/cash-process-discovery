@@ -11,9 +11,8 @@ redistribution.
 ## Split Miner
 
 Split Miner 1.7.1 is an external research artifact and is not redistributed.
-Users provide `split-miner-1.7.1-all.jar` themselves. The repository accepts
-only SHA-256
-`472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328`.
+Users provide `split-miner-1.7.1-all.jar` from the
+[`iharsuvorau/split-miner` release](https://github.com/iharsuvorau/split-miner/releases/tag/1.7.1).
 
 ## 48-feature extractor
 

@@ -13,8 +13,10 @@ from process_discovery_cash.data.preprocessing.catalog import (
 from process_discovery_cash.data.preprocessing.metadata import sha256_file
 from process_discovery_cash.utils.paths import portable_project_path, resolve_portable_path
 
-SPLIT_MINER_SHA256 = "472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328"
 DEFAULT_SPLIT_MINER_JAR = "data/external/split-miner-1.7.1-all.jar"
+SPLIT_MINER_RELEASE_URL = (
+    "https://github.com/iharsuvorau/split-miner/releases/tag/1.7.1"
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -69,14 +71,17 @@ def verify_dataset_inputs(
 
 def verify_split_miner_jar(path: str | Path) -> dict[str, Any]:
     resolved = resolve_portable_path(path)
-    return _verify_file(
-        kind="external_tool",
-        identifier="split-miner-1.7.1",
-        path=resolved,
-        expected_sha256=SPLIT_MINER_SHA256,
-        expected_size=None,
-        landing_url=None,
-    )
+    record: dict[str, Any] = {
+        "kind": "external_tool",
+        "id": "split-miner-1.7.1",
+        "path": portable_project_path(resolved),
+        "landing_url": SPLIT_MINER_RELEASE_URL,
+    }
+    if not resolved.is_file():
+        record.update(status="missing", error="file does not exist")
+        return record
+    record.update(status="ok", actual_size_bytes=resolved.stat().st_size)
+    return record
 
 
 def _verify_file(

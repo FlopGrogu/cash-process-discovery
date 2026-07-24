@@ -16,13 +16,13 @@ REQUIRED = {
     PREFIX / "README.md",
     PREFIX / "THIRD_PARTY_NOTICES.md",
     PREFIX / "docs/cluster.md",
-    PREFIX / "environments/gedi/pyproject.toml",
     PREFIX / "environments/gedi/requirements.txt",
     PREFIX / "pyproject.toml",
     PREFIX / "release/v6-manifest-receipts.json",
     PREFIX / "release/v6.json",
     PREFIX / "scripts/audit_submission.py",
     PREFIX / "scripts/verify_submission_archive.py",
+    PREFIX / "requirements-hpo.txt",
     PREFIX / "requirements.txt",
 }
 MODEL_SUFFIXES = {

@@ -12,6 +12,8 @@ from process_discovery_cash.hpo.trial_runner import (
     trial_config_hash,
 )
 
+pytestmark = pytest.mark.legacy_hpo
+
 _BASE_EXPERIMENT = """
 experiment_id: {experiment_id}
 logs:

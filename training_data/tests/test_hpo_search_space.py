@@ -5,6 +5,8 @@ from process_discovery_cash.hpo.search_space import (
     suggest_trial_params,
 )
 
+pytestmark = pytest.mark.legacy_hpo
+
 
 def _make_study():
     import optuna

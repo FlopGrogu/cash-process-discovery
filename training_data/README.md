@@ -3,7 +3,7 @@
 This repository contains the v6 process-discovery benchmark: deterministic
 augmentation, feature-space synthesis, experiment manifests, discovery, and
 quality-metric evaluation. Python 3.11 and pip are the only required setup
-tools. Docker, Apptainer, conda, and uv are not required.
+tools.
 
 ## Quick start
 
@@ -112,10 +112,10 @@ ledger:
   --check --scope primary --manifest-root build/manifests/v6
 ```
 
-`make manifests` runs those commands. The default-configuration survey and HPO
-remain available through the explicit `make manifests-survey` and
-`make manifests-hpo` targets; `make manifests-all` verifies the complete
-46-config ledger.
+`make manifests` runs those commands. The default-configuration survey is
+available through `make manifests-survey`; `make manifests-all` covers all 40
+supported ordinary configs. Deprecated HPO tooling remains in the tree only
+for compatibility and is never required for setup, validation, or submission.
 
 Every discovery manifest contains portable `data/`, `results/`, and
 `logs/slurm/` paths. The required event-log fields are `log_path` and
@@ -127,9 +127,57 @@ Metric manifests are deterministic transformations of discovery manifests.
 They preserve `test_log_path`, resolve the exported model at runtime, and keep
 failed or missing discovery rows visible in the evaluation denominator.
 
+## Starting workers
+
+After `make manifests`, a discovery manifest can be processed locally with a
+configurable process pool:
+
+```bash
+.venv/bin/python scripts/run_manifest_local.py \
+  --manifest build/manifests/v6/model/baseline/alpha_classic/v1.csv \
+  --workers 4
+```
+
+On a Slurm cluster, first put the repository and its configured data, result,
+and log directories on storage visible to every compute node. The recommended
+launcher for larger manifests starts a resumable array of pull workers:
+
+```bash
+bash slurm/run_dynamic_manifest.slurm \
+  --partition=CPU --qos=minor_student \
+  --cpus-per-task=4 --mem=64G --time=24:00:00 \
+  --array=0-3 \
+  build/manifests/v6/model/baseline/alpha_classic/v1.csv
+```
+
+Adjust the partition, QoS, memory, time, and array size for the cluster. In
+this example Slurm starts four array tasks; each task uses four internal worker
+processes because `NUM_WORKERS` defaults to `SLURM_CPUS_PER_TASK`. Each task
+repeatedly claims unfinished rows, so successful rows are retained when a task
+is restarted. Budget roughly 16 GB of memory per simultaneous discovery
+worker.
+
+For a smoke test or strict one-row-per-job isolation, preview a static
+submission and then remove `--dry-run`:
+
+```bash
+bash scripts/submit_manifest_slurm.sh \
+  --manifest build/manifests/v6/model/baseline/alpha_classic/v1.csv \
+  --row 0 --dry-run
+```
+
+Metric manifests have the analogous dynamic launcher
+`slurm/run_dynamic_metric_manifest.slurm`. See the
+[`Slurm entry-point reference`](slurm/README.md) and the full
+[`cluster runbook`](docs/cluster.md) for environment setup, metric workers,
+concurrency limits, walltime handling, and restart procedures. Run computation
+through Slurm rather than on a login node.
+
 The Python-backed algorithms need no external runtime. Split Miner remains an
-optional exception: it requires Java 8 and the separately acquired
-`data/external/split-miner-1.7.1-all.jar`. See
+optional exception: it requires Java 8. Download
+`split-miner-1.7.1-all.jar` from the
+[`iharsuvorau/split-miner` 1.7.1 release](https://github.com/iharsuvorau/split-miner/releases/tag/1.7.1)
+and place it at `data/external/split-miner-1.7.1-all.jar`. See
 [`docs/algorithms.md`](docs/algorithms.md).
 
 ## Verification
@@ -140,9 +188,9 @@ Run the complete non-external acceptance suite:
 make check
 ```
 
-This runs Ruff, all non-external tests, exact manifest receipt verification,
-and the submission audit using `.venv/bin/python`. It does not invoke uv or a
-container runtime.
+This runs Ruff, the supported non-external tests, exact manifest receipt
+verification, and the submission audit using `.venv/bin/python`. Deprecated
+legacy HPO tests are excluded.
 
 Further details:
 
@@ -151,7 +199,7 @@ Further details:
 - [`docs/data.md`](docs/data.md)
 - [`docs/experiments.md`](docs/experiments.md)
 - [`docs/metrics.md`](docs/metrics.md)
-- Optional: [`docs/hpo.md`](docs/hpo.md)
+- Deprecated legacy: [`docs/hpo.md`](docs/hpo.md)
 - [`docs/cluster.md`](docs/cluster.md)
 
 Third-party provenance is recorded in

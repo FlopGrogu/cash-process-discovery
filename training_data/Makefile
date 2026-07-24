@@ -2,9 +2,8 @@ PYTHON ?= python
 CORE_PYTHON := .venv/bin/python
 GEDI_PYTHON := .venv-gedi/bin/python
 MANIFEST_BUILD_ROOT ?= build/manifests/v6
-DOCKER_PLATFORM ?= linux/amd64
 
-.PHONY: env verify-inputs data-smoke data-all manifests manifests-survey manifests-hpo manifests-all check container-docker submission-archive
+.PHONY: env verify-inputs data-smoke data-all manifests manifests-survey manifests-hpo manifests-all check submission-archive
 
 env:
 	$(PYTHON) -m venv .venv
@@ -34,6 +33,7 @@ manifests-survey:
 	$(CORE_PYTHON) scripts/manifest_receipts.py --check --scope survey --manifest-root $(MANIFEST_BUILD_ROOT)
 
 manifests-hpo:
+	@echo "WARNING: HPO is deprecated legacy tooling and is not required for submission."
 	set -e; for config in configs/experiments/v6/hpo/*/*.yaml; do \
 		$(CORE_PYTHON) scripts/generate_hpo_studies.py --config "$$config" --output-root $(MANIFEST_BUILD_ROOT); \
 	done
@@ -41,19 +41,14 @@ manifests-hpo:
 
 manifests-all:
 	$(CORE_PYTHON) scripts/generate_v6_manifests.py --all --output-root $(MANIFEST_BUILD_ROOT)
-	set -e; for config in configs/experiments/v6/hpo/*/*.yaml; do \
-		$(CORE_PYTHON) scripts/generate_hpo_studies.py --config "$$config" --output-root $(MANIFEST_BUILD_ROOT); \
-	done
-	$(CORE_PYTHON) scripts/manifest_receipts.py --check --scope all --manifest-root $(MANIFEST_BUILD_ROOT)
+	$(CORE_PYTHON) scripts/manifest_receipts.py --check --scope primary --manifest-root $(MANIFEST_BUILD_ROOT)
+	$(CORE_PYTHON) scripts/manifest_receipts.py --check --scope survey --manifest-root $(MANIFEST_BUILD_ROOT)
 
 check:
 	$(CORE_PYTHON) -m ruff check .
-	$(CORE_PYTHON) -m pytest -m "not external"
+	$(CORE_PYTHON) -m pytest -m "not external and not legacy_hpo"
 	$(CORE_PYTHON) scripts/manifest_receipts.py --check --scope primary
 	$(CORE_PYTHON) scripts/audit_submission.py
-
-container-docker:
-	docker build --platform $(DOCKER_PLATFORM) -t pdcash-v6:6.0.0 .
 
 submission-archive:
 	$(CORE_PYTHON) scripts/build_submission_archive.py

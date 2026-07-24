@@ -8,7 +8,6 @@ pm4py_api:
 model_type: bpmn
 default_params:
   jar_path: data/external/split-miner-1.7.1-all.jar
-  jar_sha256: 472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328
   jar_env_var: SPLIT_MINER_JAR
   java_bin: null
   java_options:
@@ -48,7 +47,6 @@ search_space:
 notes:
   - "External Java backend using iharsuvorau/split-miner 1.7.1 CLI flags."
   - "jar_path defaults to data/external/split-miner-1.7.1-all.jar; SPLIT_MINER_JAR can still be used when jar_path is null or omitted in an explicit config."
-  - "jar_sha256 pins the accepted Split Miner 1.7.1 artifact."
   - "java_bin defaults to null so JAVA_BIN can select a Java 8 runtime without regenerating a custom algorithm config."
   - "java_options bounds each Split Miner JVM to reduce node-level native-memory and metaspace failures under concurrent runs."
   - "timeout_seconds is an external-process runtime limit; the default is 24 hours."
