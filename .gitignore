@@ -1,0 +1,117 @@
+# Python bytecode, tooling, and packaging
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.hypothesis/
+.nox/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Environments, credentials, and local settings
+.venv/
+.venv-gedi/
+.venv-*/
+venv/
+env/
+.env
+.env.*
+!.env.example
+credentials.json
+secrets.json
+secrets.yaml
+secrets.yml
+id_ed25519
+id_rsa
+*.key
+*.pem
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Data: keep only tiny examples and directory placeholders
+data/raw/**
+data/interim/**
+data/processed/**
+data/external/**
+data/synthetic/**
+data/augmented/**
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+!data/synthetic/.gitkeep
+!data/example/**
+
+# Generated experiments, figures, models, and outputs
+experiments/generated/**
+!experiments/generated/.gitkeep
+experiments/manifests/**
+!experiments/manifests/.gitkeep
+figures/
+models/
+runs/
+results/local/**
+results/cluster/**
+results/metrics/**
+results/aggregated/**
+results/reports/**
+results/gedi/**
+!results/local/.gitkeep
+!results/cluster/.gitkeep
+!results/aggregated/.gitkeep
+!results/reports/.gitkeep
+!results/gedi/.gitkeep
+!results/README.md
+
+# Generated artifact formats
+*.csv
+*.journal
+*.bpmn
+*.joblib
+*.onnx
+*.pickle
+*.pkl
+*.pnml
+*.pt
+*.pth
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.sha256
+
+# Slurm and local logs
+logs/
+*.log
+*.err
+slurm-*.out
+
+# OS and editor files
+.DS_Store
+._*
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+~$*
+
+# Claude
+.claude/
+CLAUDE.md
+
+# Temporary files
+tmp/
+outputs/
+submission-dist/
+.cmds

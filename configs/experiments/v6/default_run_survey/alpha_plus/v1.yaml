@@ -1,0 +1,18 @@
+experiment_id: v6_default_run_survey_alpha_plus_v1
+logs_from: ../../baseline/alpha_plus/v1.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/default_run_survey/alpha_plus
+  log_dir: logs/slurm/v6/model/default_run_survey/alpha_plus/v1
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/default_run_survey/alpha_plus/v1.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: alpha_miner_plus
+    algorithm_id: alpha_miner_plus
+    artifact_algorithm_id: alpha_miner
+    backend: pm4py
+    model_type: petri_net
+    runtime_params: [discovery_timeout_seconds]
+    default_params: {variant: plus, discovery_timeout_seconds: 86400}
+    configs: [{}]

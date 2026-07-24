@@ -1,0 +1,52 @@
+algorithm_id: inductive_miner
+display_name: Inductive Miner
+backend: pm4py
+supported: true
+pm4py_api:
+  simplified_function: pm4py.discovery.discover_petri_net_inductive
+  lower_level_module: pm4py.algo.discovery.inductive.algorithm
+  variant_enum:
+    im: Variants.IM
+    imf: Variants.IMf
+    imd: Variants.IMd
+model_type: petri_net
+default_params:
+  variant: im
+  disable_fallthroughs: false
+  multi_processing: false
+  recursion_limit: 10000
+  discovery_timeout_seconds: 86400
+parameter_mapping:
+  activity_key: ACTIVITY_KEY
+  timestamp_key: TIMESTAMP_KEY
+  case_id_key: CASE_ID_KEY
+  noise_threshold: noise_threshold
+  disable_fallthroughs: disable_fallthroughs
+  multi_processing: multiprocessing
+runtime_params:
+  - discovery_timeout_seconds
+  - recursion_limit
+search_space:
+  variant:
+    type: categorical
+    values: [im, imf, imd]
+  disable_fallthroughs:
+    type: categorical
+    values: [false, true]
+  multi_processing:
+    type: categorical
+    values: [false]
+conditional_search_space:
+  - when:
+      variant: imf
+    params:
+      noise_threshold:
+        type: float
+        values: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+notes:
+  - "IM is the basic Inductive Miner variant."
+  - "IMf is the noise-aware variant, so nonzero noise_threshold values belong here."
+  - "IMd is DFG-oriented; the runner uses PM4Py's lower-level apply path, which builds the required DFG abstraction from ordinary event logs."
+  - "multi_processing is fixed to false because Slurm/job-level parallelism should control parallel execution."
+  - "discovery_timeout_seconds is a runner-enforced 24-hour limit and is not passed to PM4Py."
+  - "recursion_limit is a runner-level execution control used for discovery/result serialization and is not passed to PM4Py."

@@ -1,0 +1,53 @@
+algorithm_id: genetic_miner
+display_name: Genetic Miner
+backend: pm4py
+supported: true
+pm4py_api:
+  simplified_function: pm4py.discovery.discover_petri_net_genetic
+  lower_level_module: pm4py.algo.discovery.genetic.algorithm
+  variant_enum:
+    classic: Variants.CLASSIC
+model_type: petri_net
+default_params:
+  population_size: 500
+  elitism_rate: 0.01
+  crossover_rate: 1.0
+  mutation_rate: 0.01
+  generations: 100
+  elitism_min_sample: 5
+  log_csv: null
+  discovery_timeout_seconds: 86400
+runtime_params:
+  - discovery_timeout_seconds
+search_space:
+  population_size:
+    type: integer
+    values: [100, 500]
+  generations:
+    type: integer
+    values: [50, 100]
+  mutation_rate:
+    type: float
+    values: [0.01, 0.05]
+  crossover_rate:
+    type: float
+    values: [1.0]
+  elitism_rate:
+    type: float
+    values: [0.01, 0.05]
+  elitism_min_sample:
+    type: integer
+    values: [5]
+  log_csv:
+    type: fixed
+    values: [null]
+notes:
+  - "PM4Py 2.7.22 exposes discover_petri_net_genetic."
+  - "The runner uses PM4Py's lower-level Genetic Miner apply path when available."
+  - "Population size and generations dominate runtime."
+  - "Mutation rate controls exploration."
+  - "Crossover rate is fixed to PM4Py's default 1.0 for the initial full sweep."
+  - "Elitism rate is varied mildly to compare conservative vs stronger preservation of good candidates."
+  - "log_csv is fixed to null because it is logging/output behavior, not a model-quality hyperparameter."
+  - "discovery_timeout_seconds is a wrapper runtime limit, not a PM4Py hyperparameter; the default is 24 hours."
+  - "A future deep sweep could expand population_size to [100, 250, 500], generations to [50, 100, 200], mutation_rate to [0.005, 0.01, 0.05], crossover_rate to [0.8, 1.0], elitism_rate to [0.01, 0.05], and elitism_min_sample to [5, 10]."

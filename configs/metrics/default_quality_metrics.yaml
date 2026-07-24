@@ -1,0 +1,15 @@
+metrics:
+  - name: fitness
+    model_types: [petri_net, process_tree_or_petri_net]
+  - name: precision
+    model_types: [petri_net, process_tree_or_petri_net]
+  - name: generalization
+    model_types: [petri_net, process_tree_or_petri_net]
+  - name: simplicity
+    model_types: [petri_net, process_tree_or_petri_net]
+metric_statuses:
+  - success
+  - unsupported_model_type
+  - backend_error
+  - timeout
+  - not_computed

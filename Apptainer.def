@@ -1,0 +1,56 @@
+Bootstrap: docker
+From: eclipse-temurin:8u462-b08-jre-jammy
+
+%labels
+    org.opencontainers.image.title process-discovery-cash-v6
+    org.opencontainers.image.version 6.0.0
+
+%files
+    CITATION.cff /app/CITATION.cff
+    LICENSE /app/LICENSE
+    README.md /app/README.md
+    THIRD_PARTY_NOTICES.md /app/THIRD_PARTY_NOTICES.md
+    pyproject.toml /app/pyproject.toml
+    uv.lock /app/uv.lock
+    configs /app/configs
+    container /app/container
+    data/example /app/data/example
+    docs /app/docs
+    environments/gedi/pyproject.toml /app/environments/gedi/pyproject.toml
+    environments/gedi/uv.lock /app/environments/gedi/uv.lock
+    release /app/release
+    scripts /app/scripts
+    slurm /app/slurm
+    src /app/src
+    tests /app/tests
+
+%post
+    apt-get update
+    apt-get install -y --no-install-recommends ca-certificates curl gcc g++ git swig
+    rm -rf /var/lib/apt/lists/*
+    curl -LsSf https://astral.sh/uv/0.8.13/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh
+    cd /app
+    uv python install 3.11.15
+    uv sync --frozen --all-extras
+    uv sync --project environments/gedi --frozen
+    chmod 0755 /app/container/verify-split-miner.sh
+
+%environment
+    export PYTHONHASHSEED=0
+    export PYTHONUNBUFFERED=1
+    export DATA_ROOT=/data
+    export RESULTS_ROOT=/results
+    export LOG_ROOT=/logs/slurm
+    export SPLIT_MINER_JAR=/inputs/split-miner-1.7.1-all.jar
+    export PATH=/app/.venv/bin:/opt/java/openjdk/bin:$PATH
+
+%runscript
+    cd /app
+    exec "$@"
+
+%test
+    cd /app
+    python --version
+    java -version
+    uv sync --frozen --all-extras --check
+    uv sync --project environments/gedi --frozen --check

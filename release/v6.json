@@ -1,0 +1,23 @@
+{
+  "artifact": "process-discovery-cash",
+  "release": "6.0.0",
+  "repository": "https://github.com/pascalmad/process-mining-cash",
+  "python": "3.11.15",
+  "gedi": "1.0.8",
+  "split_miner_jar": {
+    "filename": "split-miner-1.7.1-all.jar",
+    "sha256": "472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328"
+  },
+  "canonical_inventory": {
+    "real_logs": 21,
+    "accepted_augmented_logs": 77,
+    "gedi_targets": 200,
+    "accepted_synthetic_logs": 117,
+    "total_event_logs": 215,
+    "primary_v6_configs": 30,
+    "ordinary_v6_configs": 40,
+    "hpo_v6_configs": 6,
+    "default_run_survey_rows": 210
+  },
+  "meta_learning": "Future work; no training or evaluation implementation is included."
+}

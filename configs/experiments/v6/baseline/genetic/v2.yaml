@@ -1,0 +1,17 @@
+experiment_id: v6_baseline_genetic_v2
+logs_from: ../../../../log_sets/v6_real_logs.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/baseline/genetic
+  log_dir: logs/slurm/v6/model/baseline/genetic/v2
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/baseline/genetic/v2.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: genetic_miner
+    algorithm_id: genetic_miner
+    backend: pm4py
+    model_type: petri_net
+    runtime_params: [discovery_timeout_seconds]
+    configs:
+      - {population_size: 500, elitism_rate: 0.01, crossover_rate: 1.0, mutation_rate: 0.01, generations: 100, elitism_min_sample: 5, log_csv: null, discovery_timeout_seconds: 240}

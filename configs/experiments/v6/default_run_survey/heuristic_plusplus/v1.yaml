@@ -1,0 +1,18 @@
+experiment_id: v6_default_run_survey_heuristic_plusplus_v1
+logs_from: ../../baseline/alpha_classic/v1.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/default_run_survey/heuristic_plusplus
+  log_dir: logs/slurm/v6/model/default_run_survey/heuristic_plusplus/v1
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/default_run_survey/heuristic_plusplus/v1.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: heuristics_miner_plusplus
+    algorithm_id: heuristics_miner_plusplus
+    artifact_algorithm_id: heuristics_miner
+    backend: pm4py
+    model_type: petri_net
+    runtime_params: [discovery_timeout_seconds, recursion_limit]
+    default_params: {variant: plusplus, dependency_threshold: 0.5, and_threshold: 0.65, loop_two_threshold: 0.5, min_act_count: 1, min_dfg_occurrences: 1, dfg_pre_cleaning_noise_thresh: 0.0, recursion_limit: 10000, discovery_timeout_seconds: 86400}
+    configs: [{}]

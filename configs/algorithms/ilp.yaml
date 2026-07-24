@@ -1,0 +1,25 @@
+algorithm_id: ilp_miner
+display_name: ILP Miner
+backend: pm4py
+supported: true
+pm4py_api:
+  simplified_function: pm4py.discovery.discover_petri_net_ilp
+  lower_level_module: pm4py.algo.discovery.ilp.algorithm
+  variant_enum:
+    classic: Variants.CLASSIC
+model_type: petri_net
+default_params:
+  alpha: 1.0
+  discovery_timeout_seconds: 86400
+runtime_params:
+  - discovery_timeout_seconds
+search_space:
+  alpha:
+    type: float
+    values: [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0]
+notes:
+  - "PM4Py describes alpha as the noise threshold for the sequence encoding graph."
+  - "alpha=1.0 means no filtering; alpha=0.0 means maximum filtering."
+  - "The runner uses PM4Py's lower-level ILP apply path so alpha is passed as a real backend parameter."
+  - "Avoid very low alpha values in the default full sweep because they may over-filter."
+  - "discovery_timeout_seconds is a runner-level 24-hour limit that is not passed to PM4Py."

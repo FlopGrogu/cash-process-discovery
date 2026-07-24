@@ -1,0 +1,17 @@
+experiment_id: v6_baseline_split_v2
+logs_from: ../../../../log_sets/v6_real_logs.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/baseline/split
+  log_dir: logs/slurm/v6/model/baseline/split/v2
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/baseline/split/v2.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: split_miner
+    algorithm_id: split_miner
+    backend: external
+    model_type: bpmn
+    runtime_params: [timeout_seconds]
+    configs:
+      - {jar_path: data/external/split-miner-1.7.1-all.jar, jar_sha256: 472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328, jar_env_var: SPLIT_MINER_JAR, java_bin: null, epsilon: 0.5, eta: 0.5, parallelismFirst: false, removeLoopActivityMarkers: false, replaceIORs: false, diagram: false, timeout_seconds: 240}

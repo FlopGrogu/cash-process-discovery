@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "process-discovery-cash"
+version = "6.0.0"
+description = "Reproducible v6 process-discovery benchmark and data-generation artifact"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { text = "MIT" }
+authors = [{ name = "Pascal Dinh" }]
+dependencies = [
+  "pm4py==2.7.22.2",
+  "r4pm[polars]==0.5.5",
+  "polars==1.41.2",
+  "pyarrow==24.0.0",
+  "pandas==3.0.2",
+  "numpy==2.4.4",
+  "scipy==1.17.1",
+  "scikit-learn==1.8.0",
+  "networkx==3.6.1",
+  "pyyaml==6.0.3",
+  "pydantic==2.13.4",
+  "tqdm==4.67.3",
+  "joblib==1.5.3",
+  "pulp==3.3.0",
+  "optuna==4.9.0",
+]
+
+[project.urls]
+Repository = "https://github.com/pascalmad/process-mining-cash"
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.0.3",
+  "ruff==0.15.13",
+]
+
+[project.scripts]
+pdcash-run-discovery = "process_discovery_cash.cli.run_discovery:main"
+pdcash-run-dynamic-worker = "process_discovery_cash.cli.run_dynamic_worker:main"
+pdcash-run-dynamic-metric-worker = "process_discovery_cash.cli.run_dynamic_metric_worker:main"
+pdcash-run-manifest-local = "process_discovery_cash.cli.run_manifest_local:main"
+pdcash-generate-manifest = "process_discovery_cash.cli.generate_manifest:main"
+pdcash-generate-v6-manifests = "process_discovery_cash.cli.generate_v6_manifests:main"
+pdcash-generate-metric-manifest = "process_discovery_cash.cli.generate_metric_manifest:main"
+pdcash-generate-feature-space-logs = "process_discovery_cash.cli.generate_feature_space_logs:main"
+pdcash-run-gedi-target = "process_discovery_cash.cli.run_gedi_target:main"
+pdcash-select-v6-best-configs = "process_discovery_cash.cli.select_v6_best_configs:main"
+pdcash-validate-manifest = "process_discovery_cash.cli.validate_manifest:main"
+pdcash-aggregate-results = "process_discovery_cash.cli.aggregate_results:main"
+pdcash-augment-logs = "process_discovery_cash.cli.augment_logs:main"
+pdcash-evaluate-saved-model = "process_discovery_cash.cli.evaluate_saved_model:main"
+pdcash-run-metric = "process_discovery_cash.cli.run_metric:main"
+pdcash-preprocess-logs = "process_discovery_cash.cli.preprocess_logs:main"
+pdcash-inspect-event-logs = "process_discovery_cash.cli.inspect_event_logs:main"
+pdcash-preprocess-event-logs = "process_discovery_cash.cli.preprocess_event_logs:main"
+pdcash-validate-splitminer-java = "process_discovery_cash.cli.validate_splitminer_java:main"
+pdcash-generate-hpo-studies = "process_discovery_cash.cli.generate_hpo_studies:main"
+pdcash-run-hpo-study = "process_discovery_cash.cli.run_hpo_study:main"
+pdcash-hpo-summary = "process_discovery_cash.cli.hpo_summary:main"
+pdcash-export-hpo-manifest = "process_discovery_cash.cli.export_hpo_manifest:main"
+pdcash-verify-inputs = "process_discovery_cash.cli.verify_inputs:main"
+pdcash-verify-generated-data = "process_discovery_cash.cli.verify_generated_data:main"
+pdcash-v6-manifest-receipts = "process_discovery_cash.cli.manifest_receipts:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+# Vendored verbatim (Anitan's exact 48-feature implementation); byte-for-byte
+# fidelity matters more than style — do not "fix" it.
+"src/process_discovery_cash/data/features.py" = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+  "integration: self-contained multi-stage integration tests",
+  "external: requires non-redistributed data or external research software",
+]

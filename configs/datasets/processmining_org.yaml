@@ -1,0 +1,285 @@
+datasets:
+  bpi2012:
+    display_name: BPI Challenge 2012
+    source_path: data/raw/BPI Challenge 2012_1_all/BPI_Challenge_2012.xes.gz
+    size_bytes: 3342406
+    sha256: 5cd9cc16b9bcb20bd4aae45666a5d87479ddbf47e6371618b6ad217174cecdf3
+    doi: 10.4121/uuid:3926db30-f712-4394-aebc-75976070e91f
+    landing_url: https://doi.org/10.4121/uuid:3926db30-f712-4394-aebc-75976070e91f
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2012_1_all/DATA.xml, role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: standard
+
+  bpi2013_closed_problems:
+    display_name: BPI Challenge 2013 - Closed Problems
+    source_path: data/raw/BPI Challenge 2013, closed problems_1_all/BPI_Challenge_2013_closed_problems.xes.gz
+    size_bytes: 186515
+    sha256: 6d2a6c64666621dd258765cabe38c013b5a8c59cc42b55d4191ddf57b6da072f
+    doi: 10.4121/c2c3b154-ab26-4b31-a0e8-8f2350ddac11
+    landing_url: https://doi.org/10.4121/c2c3b154-ab26-4b31-a0e8-8f2350ddac11
+    license: 4TU General Terms of Use
+    companions:
+      - {path: "data/raw/BPI Challenge 2013, closed problems_1_all/DATA.xml", role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: status_like
+
+  bpi2013_incidents:
+    display_name: BPI Challenge 2013 - Incidents
+    source_path: data/raw/BPI Challenge 2013, incidents_1_all/BPI_Challenge_2013_incidents.xes.gz
+    size_bytes: 1322247
+    sha256: 6ec2136c607648608655802486df97a866f351668751b7ecbca51e1f8715d522
+    doi: 10.4121/500573e6-accc-4b0c-9576-aa5468b10cee
+    landing_url: https://doi.org/10.4121/500573e6-accc-4b0c-9576-aa5468b10cee
+    license: 4TU General Terms of Use
+    companions:
+      - {path: "data/raw/BPI Challenge 2013, incidents_1_all/DATA.xml", role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: status_like
+
+  bpi2013_open_problems:
+    display_name: BPI Challenge 2013 - Open Problems
+    source_path: data/raw/BPI Challenge 2013, open problems_1_all/BPI_Challenge_2013_open_problems.xes.gz
+    size_bytes: 68697
+    sha256: 71cedbecdef25255af32f73719e75f43f4cf183f1e8c08e03687b684f3174190
+    doi: 10.4121/3537c19d-6c64-4b1d-815d-915ab0e479da
+    landing_url: https://doi.org/10.4121/3537c19d-6c64-4b1d-815d-915ab0e479da
+    license: 4TU General Terms of Use
+    companions:
+      - {path: "data/raw/BPI Challenge 2013, open problems_1_all/DATA.xml", role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: status_like
+
+  bpic15_1:
+    display_name: BPI Challenge 2015 - Municipality 1
+    source_path: data/raw/BPI Challenge 2015 Municipality 1_1_all/BPIC15_1.xes
+    size_bytes: 41227060
+    sha256: 7591f70d4a4d536ead76a56c2fa493fbe22bf2ec7e06c8ddd29da79bd666e516
+    doi: 10.4121/uuid:a0addfda-2044-4541-a450-fdcc9fe16d17
+    landing_url: https://doi.org/10.4121/uuid:a0addfda-2044-4541-a450-fdcc9fe16d17
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2015 Municipality 1_1_all/DATA1.xml, role: duplicate_log_alias}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+      optional_attributes: [activityNameEN, activityNameNL]
+
+  bpic15_2:
+    display_name: BPI Challenge 2015 - Municipality 2
+    source_path: data/raw/BPI Challenge 2015 Municipality 2_1_all/BPIC15_2.xes
+    size_bytes: 34423078
+    sha256: fd7704bd3c473afe04cf003ea3220a24d6dcd521fa6c639fb8475dd0826201a6
+    doi: 10.4121/uuid:63a8435a-077d-4ece-97cd-2c76d394d99c
+    landing_url: https://doi.org/10.4121/uuid:63a8435a-077d-4ece-97cd-2c76d394d99c
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2015 Municipality 2_1_all/DATA1.xml, role: duplicate_log_alias}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+      optional_attributes: [activityNameEN, activityNameNL]
+
+  bpic15_3:
+    display_name: BPI Challenge 2015 - Municipality 3
+    source_path: data/raw/BPI Challenge 2015 Municipality 3_1_all/BPIC15_3.xes
+    size_bytes: 46768886
+    sha256: 920985874a9ccba1f86aba138e796a4ce9a37f06f90d311fcb4c27dfca7dd6b7
+    doi: 10.4121/uuid:ed445cdd-27d5-4d77-a1f7-59fe7360cfbe
+    landing_url: https://doi.org/10.4121/uuid:ed445cdd-27d5-4d77-a1f7-59fe7360cfbe
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2015 Municipality 3_1_all/DATA1.xml, role: duplicate_log_alias}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+      optional_attributes: [activityNameEN, activityNameNL]
+
+  bpic15_4:
+    display_name: BPI Challenge 2015 - Municipality 4
+    source_path: data/raw/BPI Challenge 2015 Municipality 4_1_all/BPIC15_4.xes
+    size_bytes: 36998010
+    sha256: f508c083b972821de17d47a335f0905d108f1b9654a4db0aed9dc8c4ef8f0494
+    doi: 10.4121/uuid:679b11cf-47cd-459e-a6de-9ca614e25985
+    landing_url: https://doi.org/10.4121/uuid:679b11cf-47cd-459e-a6de-9ca614e25985
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2015 Municipality 4_1_all/DATA1.xml, role: duplicate_log_alias}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+      optional_attributes: [activityNameEN, activityNameNL]
+
+  bpic15_5:
+    display_name: BPI Challenge 2015 - Municipality 5
+    source_path: data/raw/BPI Challenge 2015 Municipality 5_1_all/BPIC15_5.xes
+    size_bytes: 46039768
+    sha256: 48ca302b19b5aa4964cd85b67a306e484655159ab2b55cf3c487ee7eb66d51ed
+    doi: 10.4121/uuid:b32c6fe5-f212-4286-9774-58dd53511cf8
+    landing_url: https://doi.org/10.4121/uuid:b32c6fe5-f212-4286-9774-58dd53511cf8
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2015 Municipality 5_1_all/DATA1.xml, role: duplicate_log_alias}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+      optional_attributes: [activityNameEN, activityNameNL]
+
+  bpi2017:
+    display_name: BPI Challenge 2017
+    source_path: data/raw/BPI Challenge 2017_1_all/BPI Challenge 2017.xes.gz
+    size_bytes: 29658747
+    sha256: 183c5e5189282779c811c78c33ff936351b3dd201165d612211fc220936f8249
+    doi: 10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b
+    landing_url: https://doi.org/10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2017_1_all/DATA.xml, role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: extended_standard
+
+  bpi2018:
+    display_name: BPI Challenge 2018
+    source_path: data/raw/BPI Challenge 2018_1_all/BPI Challenge 2018.xes.gz
+    size_bytes: 158270992
+    sha256: 7055a5310de67abb888cee26f537cde519e1ed905b0b468a314b6c319c2b30a9
+    doi: 10.4121/uuid:3301445f-95e8-4ff0-98a4-901f1f204972
+    landing_url: https://doi.org/10.4121/uuid:3301445f-95e8-4ff0-98a4-901f1f204972
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/BPI Challenge 2018_1_all/DATA.xml, role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+    notes:
+      - Use concept:name (Event Name), not the 170-value Original Activity composite classifier.
+
+  bpi2019:
+    display_name: BPI Challenge 2019
+    source_path: data/raw/BPI_Challenge_2019.xes
+    size_bytes: 728558522
+    sha256: af63bc687fc4152f2123b05c3af7772b37ef3fce2d3f67f812666c9e356baae7
+    doi: 10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1
+    landing_url: https://doi.org/10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1
+    license: 4TU General Terms of Use
+    schema:
+      lifecycle_semantics: absent
+
+  bpi2020_domestic:
+    display_name: BPI Challenge 2020 - Domestic Declarations
+    source_path: data/raw/BPI Challenge 2020_ Domestic Declarations_1_all/DomesticDeclarations.xes.gz
+    size_bytes: 933930
+    sha256: 0bc3312acf0b9ee5ae6f4ebe9df204005ef11665d62f2d21dd04995161d7532b
+    doi: 10.4121/uuid:3f422315-ed9d-4882-891f-e180b5b4feb5
+    landing_url: https://doi.org/10.4121/uuid:3f422315-ed9d-4882-891f-e180b5b4feb5
+    license: CC BY-NC 4.0
+    companions:
+      - {path: data/raw/BPI Challenge 2020_ Domestic Declarations_1_all/README.txt, role: documentation}
+
+  bpi2020_international:
+    display_name: BPI Challenge 2020 - International Declarations
+    source_path: data/raw/BPI Challenge 2020_ International Declarations_1_all/InternationalDeclarations.xes.gz
+    size_bytes: 1581144
+    sha256: b527c8d06255f4312c6ce8f36f7f4110243d84fd6ca48583cd9b80896c601494
+    doi: 10.4121/uuid:2bbf8f6a-fc50-48eb-aa9e-c4ea5ef7e8c5
+    landing_url: https://doi.org/10.4121/uuid:2bbf8f6a-fc50-48eb-aa9e-c4ea5ef7e8c5
+    license: CC BY-NC 4.0
+    companions:
+      - {path: data/raw/BPI Challenge 2020_ International Declarations_1_all/README.txt, role: documentation}
+
+  bpi2020_permit:
+    display_name: BPI Challenge 2020 - Travel Permit
+    source_path: data/raw/BPI Challenge 2020_ Travel Permit Data_1_all/PermitLog.xes.gz
+    size_bytes: 1938192
+    sha256: 9e23befe5394c13caff4428c00a6cee08647b1749f270a78cd05d99f861c5a8b
+    doi: 10.4121/uuid:ea03d361-a7cd-4f5e-83d8-5fbdf0362550
+    landing_url: https://doi.org/10.4121/uuid:ea03d361-a7cd-4f5e-83d8-5fbdf0362550
+    license: CC BY-NC 4.0
+    companions:
+      - {path: data/raw/BPI Challenge 2020_ Travel Permit Data_1_all/README.txt, role: documentation}
+
+  bpi2020_prepaid:
+    display_name: BPI Challenge 2020 - Prepaid Travel Costs
+    source_path: data/raw/BPI Challenge 2020_ Prepaid Travel Costs_1_all/PrepaidTravelCost.xes.gz
+    size_bytes: 370047
+    sha256: d2b0f458fe33b808d7134fd464c051364280e2a56c1ee2136419947f103f26f7
+    doi: 10.4121/uuid:5d2fe5e1-f91f-4a3b-ad9b-9e4126870165
+    landing_url: https://doi.org/10.4121/uuid:5d2fe5e1-f91f-4a3b-ad9b-9e4126870165
+    license: CC BY-NC 4.0
+    companions:
+      - {path: data/raw/BPI Challenge 2020_ Prepaid Travel Costs_1_all/README.txt, role: documentation}
+
+  bpi2020_payment:
+    display_name: BPI Challenge 2020 - Request for Payment
+    source_path: data/raw/BPI Challenge 2020_ Request For Payment_1_all/RequestForPayment.xes.gz
+    size_bytes: 696896
+    sha256: 028e2d645153190200b2ea998747efa02cf1beb6f83db62598963cf391f114b1
+    doi: 10.4121/uuid:895b26fb-6f25-46eb-9e48-0dca26fcd030
+    landing_url: https://doi.org/10.4121/uuid:895b26fb-6f25-46eb-9e48-0dca26fcd030
+    license: CC BY-NC 4.0
+    companions:
+      - {path: data/raw/BPI Challenge 2020_ Request For Payment_1_all/README.txt, role: documentation}
+
+  hospital_billing:
+    display_name: Hospital Billing
+    source_path: data/raw/Hospital Billing - Event Log_1_all-2/Hospital Billing - Event Log.xes.gz
+    size_bytes: 6615825
+    sha256: 3f4bb8a09b1d3dec7deb8a8b1c2f31374fbe57fd60fe38477f1cc06989242ef6
+    doi: 10.4121/uuid:76c46b83-c930-4798-a1c9-4be94dfeb741
+    landing_url: https://doi.org/10.4121/uuid:76c46b83-c930-4798-a1c9-4be94dfeb741
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/Hospital Billing - Event Log_1_all-2/DATA.xml, role: processmining_metadata}
+      - {path: data/raw/Hospital Billing - Event Log_1_all-2/readme.txt, role: documentation}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+
+  hospital:
+    display_name: Hospital Log
+    source_path: data/raw/Real-life event logs - Hospital log_1_all/Hospital_log.xes.gz
+    size_bytes: 2384410
+    sha256: afeec2ad34d7d084441c8b19c9b6bda20e716b66aee6a162247b3f203f59ce96
+    doi: 10.4121/d9769f3d-0ab0-4fb8-803b-0d1120ffcf54
+    landing_url: https://doi.org/10.4121/d9769f3d-0ab0-4fb8-803b-0d1120ffcf54
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/Real-life event logs - Hospital log_1_all/DATA.xml, role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+
+  road_traffic_fines:
+    display_name: Road Traffic Fine Management Process
+    source_path: data/raw/Road Traffic Fine Management Process_1_all-2/Road_Traffic_Fine_Management_Process.xes.gz
+    size_bytes: 3454978
+    sha256: dc9e0e65c964c8ce2a720687ecf17d8204a5cced5db2267c717ed39ada665da8
+    doi: 10.4121/uuid:270fd440-1057-4fb9-89a9-b699b47990f5
+    landing_url: https://doi.org/10.4121/uuid:270fd440-1057-4fb9-89a9-b699b47990f5
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/Road Traffic Fine Management Process_1_all-2/DATA.xml, role: processmining_metadata}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only
+
+  sepsis:
+    display_name: Sepsis Cases
+    source_path: data/raw/Sepsis Cases - Event Log_1_all-2/Sepsis Cases - Event Log.xes.gz
+    size_bytes: 202508
+    sha256: 709c52340306415952811b9b9c5dc6bcc8f8d47d583eba39df9a538459dc543a
+    doi: 10.4121/uuid:915d2bfb-7e84-49ad-a286-dc35f063a460
+    landing_url: https://doi.org/10.4121/uuid:915d2bfb-7e84-49ad-a286-dc35f063a460
+    license: 4TU General Terms of Use
+    companions:
+      - {path: data/raw/Sepsis Cases - Event Log_1_all-2/DATA.xml, role: processmining_metadata}
+      - {path: data/raw/Sepsis Cases - Event Log_1_all-2/readme.txt, role: documentation}
+    schema:
+      lifecycle: lifecycle:transition
+      lifecycle_semantics: complete_only

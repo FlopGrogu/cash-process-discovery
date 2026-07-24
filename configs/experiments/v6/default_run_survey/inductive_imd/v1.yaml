@@ -1,0 +1,18 @@
+experiment_id: v6_default_run_survey_inductive_imd_v1
+logs_from: ../../baseline/alpha_classic/v1.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/default_run_survey/inductive_imd
+  log_dir: logs/slurm/v6/model/default_run_survey/inductive_imd/v1
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/default_run_survey/inductive_imd/v1.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: inductive_miner_imd
+    algorithm_id: inductive_miner_imd
+    artifact_algorithm_id: inductive_miner
+    backend: pm4py
+    model_type: petri_net
+    runtime_params: [discovery_timeout_seconds, recursion_limit]
+    default_params: {variant: imd, disable_fallthroughs: false, multi_processing: false, recursion_limit: 10000, discovery_timeout_seconds: 86400}
+    configs: [{}]

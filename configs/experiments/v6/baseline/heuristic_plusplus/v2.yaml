@@ -1,0 +1,18 @@
+experiment_id: v6_baseline_heuristic_plusplus_v2
+logs_from: ../../../../log_sets/v6_real_logs.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/baseline/heuristic_plusplus
+  log_dir: logs/slurm/v6/model/baseline/heuristic_plusplus/v2
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/baseline/heuristic_plusplus/v2.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: heuristics_miner_plusplus
+    algorithm_id: heuristics_miner_plusplus
+    artifact_algorithm_id: heuristics_miner
+    backend: pm4py
+    model_type: petri_net
+    runtime_params: [discovery_timeout_seconds]
+    configs:
+      - {variant: plusplus, dependency_threshold: 0.5, and_threshold: 0.65, loop_two_threshold: 0.5, min_act_count: 1, min_dfg_occurrences: 1, dfg_pre_cleaning_noise_thresh: 0.05, discovery_timeout_seconds: 240}

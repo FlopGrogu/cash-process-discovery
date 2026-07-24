@@ -1,0 +1,43 @@
+experiment_id: v6_baseline_alpha_classic_v1
+logs:
+  - {log_id: bpi2012, dataset_id: bpi2012}
+  - {log_id: bpi2013_closed_problems, dataset_id: bpi2013_closed_problems}
+  - {log_id: bpi2013_incidents, dataset_id: bpi2013_incidents}
+  - {log_id: bpi2013_open_problems, dataset_id: bpi2013_open_problems}
+  - {log_id: bpic15_1, dataset_id: bpic15_1}
+  - {log_id: bpic15_2, dataset_id: bpic15_2}
+  - {log_id: bpic15_3, dataset_id: bpic15_3}
+  - {log_id: bpic15_4, dataset_id: bpic15_4}
+  - {log_id: bpic15_5, dataset_id: bpic15_5}
+  - {log_id: bpi2017, dataset_id: bpi2017}
+  - {log_id: bpi2018, dataset_id: bpi2018}
+  - {log_id: bpi2019, dataset_id: bpi2019}
+  - {log_id: bpi2020_domestic, dataset_id: bpi2020_domestic}
+  - {log_id: bpi2020_international, dataset_id: bpi2020_international}
+  - {log_id: bpi2020_permit, dataset_id: bpi2020_permit}
+  - {log_id: bpi2020_prepaid, dataset_id: bpi2020_prepaid}
+  - {log_id: bpi2020_payment, dataset_id: bpi2020_payment}
+  - {log_id: hospital_billing, dataset_id: hospital_billing}
+  - {log_id: hospital, dataset_id: hospital}
+  - {log_id: road_traffic_fines, dataset_id: road_traffic_fines}
+  - {log_id: sepsis, dataset_id: sepsis}
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/baseline/alpha_classic
+  log_dir: logs/slurm/v6/model/baseline/alpha_classic/v1
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/baseline/alpha_classic/v1.csv
+metrics:
+  enabled: false
+  profile: token
+  names: [fitness, precision, generalization, simplicity]
+  export_model: true
+algorithms:
+  - name: alpha_miner_classic
+    algorithm_id: alpha_miner_classic
+    artifact_algorithm_id: alpha_miner
+    backend: pm4py
+    model_type: petri_net
+    runtime_params: [discovery_timeout_seconds]
+    configs:
+      - variant: classic

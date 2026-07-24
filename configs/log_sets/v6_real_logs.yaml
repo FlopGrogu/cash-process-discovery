@@ -1,0 +1,22 @@
+logs:
+  - {log_id: bpi2012, dataset_id: bpi2012}
+  - {log_id: bpi2013_closed_problems, dataset_id: bpi2013_closed_problems}
+  - {log_id: bpi2013_incidents, dataset_id: bpi2013_incidents}
+  - {log_id: bpi2013_open_problems, dataset_id: bpi2013_open_problems}
+  - {log_id: bpic15_1, dataset_id: bpic15_1}
+  - {log_id: bpic15_2, dataset_id: bpic15_2}
+  - {log_id: bpic15_3, dataset_id: bpic15_3}
+  - {log_id: bpic15_4, dataset_id: bpic15_4}
+  - {log_id: bpic15_5, dataset_id: bpic15_5}
+  - {log_id: bpi2017, dataset_id: bpi2017}
+  - {log_id: bpi2018, dataset_id: bpi2018}
+  - {log_id: bpi2019, dataset_id: bpi2019}
+  - {log_id: bpi2020_domestic, dataset_id: bpi2020_domestic}
+  - {log_id: bpi2020_international, dataset_id: bpi2020_international}
+  - {log_id: bpi2020_permit, dataset_id: bpi2020_permit}
+  - {log_id: bpi2020_prepaid, dataset_id: bpi2020_prepaid}
+  - {log_id: bpi2020_payment, dataset_id: bpi2020_payment}
+  - {log_id: hospital_billing, dataset_id: hospital_billing}
+  - {log_id: hospital, dataset_id: hospital}
+  - {log_id: road_traffic_fines, dataset_id: road_traffic_fines}
+  - {log_id: sepsis, dataset_id: sepsis}

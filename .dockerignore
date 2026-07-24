@@ -1,0 +1,30 @@
+.git
+.github
+.pytest_cache
+.ruff_cache
+.venv
+.venv-*
+**/.venv
+**/.venv-*
+.venv-gedi
+**/__pycache__
+**/*.py[cod]
+.env
+.cmds
+build
+dist
+submission-dist
+*.egg-info
+
+# Raw and generated research artifacts are mounted at runtime, never sent as
+# Docker build context. Keep only the tiny public fixture used by integration
+# tests.
+data/**
+!data/example/
+!data/example/**
+experiments/manifests/**
+!experiments/manifests/.gitkeep
+results
+runs
+logs
+outputs

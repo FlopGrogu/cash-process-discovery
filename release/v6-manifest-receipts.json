@@ -1,0 +1,470 @@
+{
+  "canonical_config_count": 46,
+  "hpo_study_manifest_count": 6,
+  "ordinary_manifest_count": 40,
+  "primary_manifest_count": 30,
+  "receipts": [
+    {
+      "config_path": "configs/experiments/v6/baseline/alpha_classic/v1.yaml",
+      "config_sha256": "40f9896530a3b337c9381518b3a645b94632e66ee76ac1e36005ce766fdf136c",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/alpha_classic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "07b1cd7d2b5677294139a184a00babf4feaa21976c0ac9770876572fde15cbe2"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/alpha_plus/v1.yaml",
+      "config_sha256": "58d773ef2f84b3102c35b48601f34b432913a99c5beb08378d9b28fe0ee1501f",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/alpha_plus/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "48ff79ec81cb9cc29b366c0ba4bc2759ff0c75a712a0ac0ccf8b872d2394b8ef"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/genetic/v2.yaml",
+      "config_sha256": "67cec68840d6233aa414e2b5c6290ed8d9b0f4afe740b46c7bbb733a6e858ac6",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/genetic/v2.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "04278122ddf2942c3427423eb04202b5dbcbd75cca667c8e5d98bd8f58428a11"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/heuristic_classic/v2.yaml",
+      "config_sha256": "d90d2ec34ca58d0138e112fda200da77b8c48a4ee6cf2a8b400d4b323d1ad30e",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/heuristic_classic/v2.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "929c92407f4b75af276da0a4a1b8d3db413c05ed2e60c65bbe4e1c80874fc443"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/heuristic_plusplus/v2.yaml",
+      "config_sha256": "24681cde8809df730257f37b8ac1edd030613e82abfc1bc8444ccc92f5402b01",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/heuristic_plusplus/v2.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "f627bfa2bc940cf12bc9906b1aae30d7fe64dec90c55bb6f91a2210167e1e79a"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/ilp/v2.yaml",
+      "config_sha256": "5234bd747b1fa0fee4c1953f037974a32ee23251f69c75ca5d8b35399fbebb4e",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/ilp/v2.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "5993d18e259b2033e7f0eb76dcb49be92768ab885600f80ef3d8d5c25765d937"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/inductive_im/v1.1.yaml",
+      "config_sha256": "b38a51ee8eeea16553c8f10097e474e6db730788d1c4888ebd3bfd00f56f283d",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/inductive_im/v1.1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "90d4ee678a16ce439c4cec1ca29ef16c5c7b969cb5b40c0c0c92f04cc986d5b6"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/inductive_imd/v1.1.yaml",
+      "config_sha256": "927a6269b8c20d03986785e493ebd146daf2ace56b77172d2bd1510bbb1c7ce0",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/inductive_imd/v1.1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "eba062093c7cbdc89351bca2c558039114b5c3c5e780f0e04324949563de24e3"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/inductive_imf/v2.yaml",
+      "config_sha256": "878cc8a15a4df46f916e98cb0974ac41bb9a1ba6d92ede806aca26efa2763076",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/inductive_imf/v2.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "f1cf2067befa0a9d9727028227a91f53a5903fe3b664e9993305edb595873489"
+    },
+    {
+      "config_path": "configs/experiments/v6/baseline/split/v2.yaml",
+      "config_sha256": "8e1faa9c4560bdc78a0464ed59707f6fdfa015518be96600eed6aab8c3720714",
+      "expected_manifest_path": "experiments/manifests/v6/model/baseline/split/v2.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "primary",
+      "sha256": "f32406d814505de2fdaed1462f370bf9d61f1894a2e478d8e7c63ab26f5907bf"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/alpha_classic/v1.yaml",
+      "config_sha256": "34526a2f252d6be025ad16e73966d81ae1679e328435a1cefb98ba412c8b2ac8",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/alpha_classic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "f811c12b5eca0c532c85fd80232446ed6bddad5f104ace765d390910869a8ee6"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/alpha_plus/v1.yaml",
+      "config_sha256": "18543da1bc36bfe9dcdaa97c6b1d9d59e13282550d4c4820d71674beaee967ef",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/alpha_plus/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "48e184cc449419b77783a8c9eb7e1e69be2fe148a869491bc0e81387fe82f539"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/genetic/v1.yaml",
+      "config_sha256": "a7202170336e656d39f093c604932cdb4dfe2663671f905b2d8fbdbe6f507038",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/genetic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "810cade55a7b822ee51d80db0084e53b5b6d44ff03599ec59421873f9281b6f3"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/heuristic_classic/v1.yaml",
+      "config_sha256": "3a1a875a165a939b29d42cf4b1c71f04cd8795516e8d562e5530e79d33a69c6e",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/heuristic_classic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "2ddee1379e2cd03750396989a0b1f5f849e5ccd64f629635f7ea54074d1b43b4"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/heuristic_plusplus/v1.yaml",
+      "config_sha256": "aa92c7abe30ae7525531e9e3ff5b34c2aea5a9d889aa035fb4b40a1197fe8528",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/heuristic_plusplus/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "42ccf5689cb31941b76bb5ed746d98b29528a5f10b33e9cb767c713b4c4458f1"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/ilp/v1.yaml",
+      "config_sha256": "fe1a084a28fb116cd64db47e18a66daac83568f1d80142890b228d28bca8ebc8",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/ilp/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "b897f4c95664bc7bb90ab500f69396ec75b10f1c2bb7b59fac30e572d03e6a7b"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/inductive_im/v1.yaml",
+      "config_sha256": "26e2fc36b48c4281053f111b37bb65a4c4362cd0056651e0aa2a75cd41ee355c",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/inductive_im/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "00e7a6bf238d33a3dbe5ee1931f4c0c810e03938d13add8fb90f2a4261f0e89e"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/inductive_imd/v1.yaml",
+      "config_sha256": "046392bad6b0ca6d6a1b30947d1123398bfeaf958d8fa73f702bfeb3c4095807",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/inductive_imd/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "e09cb349678518b615b0dfdf307fb9c87432c3795fb780d13f514635990c87e7"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/inductive_imf/v1.yaml",
+      "config_sha256": "aec18a10a17686cc55299035026780a23e4bf11a03b4e0673f0ed31dcec9212c",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/inductive_imf/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "06a9ab0520be823b0d369eb941d22f9ef9f57c78c5ad809b133bc890923cc158"
+    },
+    {
+      "config_path": "configs/experiments/v6/default_run_survey/split/v1.yaml",
+      "config_sha256": "75361ec17e33c5d845637f41a92e77fd6e4e4ed61465fc108701140dd875be88",
+      "expected_manifest_path": "experiments/manifests/v6/model/default_run_survey/split/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 21,
+      "scope": "survey",
+      "sha256": "56bf9ab2535a02304e3e35213860fcc8b1366f393ea24094cfae39c366e42a7e"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/alpha_classic/v1.yaml",
+      "config_sha256": "dd5c8ade2c3341059414f4f289c0b3f0902d976aa9ce89be447f06e26d5071aa",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/alpha_classic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 98,
+      "scope": "primary",
+      "sha256": "0b503a7459a5c97ebc78c348c1d1118804fa90733adf7c9d300a39ad1a2d19a8"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/alpha_plus/v1.yaml",
+      "config_sha256": "fec72f7bf798660252f003fc6c41c9cf798964d80b4ddb7ce0d3db4b0afa1297",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/alpha_plus/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 98,
+      "scope": "primary",
+      "sha256": "71f8fea456833a49ae3838f185356ff788b9f25f608c24bea99b7a2a05b1d9cd"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/genetic/v1.yaml",
+      "config_sha256": "fe03c54b444fba9a1a6c3ea01a72f8aef49c901a0496c5e1b40a170fcee0d417",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/genetic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 1568,
+      "scope": "primary",
+      "sha256": "2689c052c0f00c7acfc7d04c6dea5b96b9294447ecf2ca66972564f6ca906226"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/heuristic_classic/v1.yaml",
+      "config_sha256": "f402ebf08aba634adcbfef9aa9ba6faaa74ff0053d067e3960bf3bcb79d98f50",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/heuristic_classic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 6272,
+      "scope": "primary",
+      "sha256": "41a9999f5052607e2336af044f09311aa15d6407c9bd2afd70f19512dd721fa9"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/heuristic_plusplus/v1.yaml",
+      "config_sha256": "93e994153e0f804fcc87f0ae24d6da6843d910fab62834ace8a5d9c538e52a7e",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/heuristic_plusplus/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 6272,
+      "scope": "primary",
+      "sha256": "368d1b5c43379a5c37f4431aadb6606b5bf7e0a5feefdcccd7f27babba0b27f7"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/ilp/v1.yaml",
+      "config_sha256": "a907f841f44ca146417cbcfaa6f6df448c0d52318763b788b9de69c6cff09c38",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/ilp/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 784,
+      "scope": "primary",
+      "sha256": "1eb4ebae4e15084aba1991c43bd8236e78c4c18d1ce2a9fc598d53e1c4599b4b"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/inductive_im/v1.yaml",
+      "config_sha256": "04026091730ee82d1d1884fa6e324dc6afe8ebd430bf8d11306a326dc10b7fd8",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/inductive_im/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 196,
+      "scope": "primary",
+      "sha256": "23f71cd98de3b9f62747f91d187260018c70c7d2fcca59b07bbd8cb30576b008"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/inductive_imd/v1.yaml",
+      "config_sha256": "2715a4928da99abc1e32b3683f4545c3f890391451de024c521da39f62c9c4cf",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/inductive_imd/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 196,
+      "scope": "primary",
+      "sha256": "5376d6d43f1a1609b54346faf04e103b6fbc49923e1a647b4c1685af22abea9c"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/inductive_imf/v1.yaml",
+      "config_sha256": "19083a7aeb276f90b4ea1b4cdd3348c822d6be3ba102de4aeb2fc771c9d068db",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/inductive_imf/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 1568,
+      "scope": "primary",
+      "sha256": "44fb3b24cb347d35bda02057642ce2f7b2c209f2305d06db34780ff0788fbdc9"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore/split/v1.yaml",
+      "config_sha256": "5ef4450337948cc7338fccbf6717239688774b57b579a94a62b37647b3daf68e",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore/split/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 1568,
+      "scope": "primary",
+      "sha256": "84b5037531cd78ef2d229fc4d84d17d1e4ec65db0fbc752004145ffaf1e08b7c"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/alpha_classic/v1.yaml",
+      "config_sha256": "7dbd41d57d9fe1995162bf835031f15cbefba6dfb94006782a8c5a2262ef4b21",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/alpha_classic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 117,
+      "scope": "primary",
+      "sha256": "5e9a2a3770b0ab2a536969377214614efe64229d8cd56ad93663b353424e1159"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/alpha_plus/v1.yaml",
+      "config_sha256": "460c5bf0c57b38292e7e46d0e81a78792e972d2cba5f1e8f97fd8618d9efdfca",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/alpha_plus/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 117,
+      "scope": "primary",
+      "sha256": "05b31048ccdc9748ee1426f30c94a0e3ce070014bcfc82c4483174d0b9fb538c"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/genetic/v1.yaml",
+      "config_sha256": "aa87c7eb170a8160a51288709eccb6fffc74704c01dd79449ec9812f783dc96a",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/genetic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 1872,
+      "scope": "primary",
+      "sha256": "e3613ab8e4d83dd207f528b017215d49c3916374f568c30af3bc409623fce883"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/heuristic_classic/v1.yaml",
+      "config_sha256": "dbe651141c9cab85b59eb879e9572fb1e6c79da629e598e299aab389599a562e",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/heuristic_classic/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 7488,
+      "scope": "primary",
+      "sha256": "603caf14bc84cac7e4b8a37f5c0dbc9a04c14b3477bce451a43d171999a1d0e8"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/heuristic_plusplus/v1.yaml",
+      "config_sha256": "e1127161d9026fdcae52737146c317c9201455753802d51a9624f1ec17f9064e",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/heuristic_plusplus/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 7488,
+      "scope": "primary",
+      "sha256": "8dff5a28477a28b0a79f19ba2bcbfb35817a73570050fb504be515dffc3ce3a3"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/ilp/v1.yaml",
+      "config_sha256": "21629944b9a9ff8012b2f1ceae4e041b34f1166240d254aa52b1d851e62187c9",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/ilp/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 936,
+      "scope": "primary",
+      "sha256": "4a3ea879bd4331d7f9eebccad75e45e14415ffee56cccd7933dff626274a2219"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/inductive_im/v1.yaml",
+      "config_sha256": "2e9b09b0e611c0456a1f95062fad1108fb9cdb798df3f3a016115a72e76f25e4",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/inductive_im/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 234,
+      "scope": "primary",
+      "sha256": "4528e3cb8956b537d9b86974f88db8cc52e64ecb36729f204fab440ea73052f7"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/inductive_imd/v1.yaml",
+      "config_sha256": "ce2801a303782a1bee5e6240ee3fb29f403f323a60cf43d27302b25b1d2bc3a6",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/inductive_imd/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 234,
+      "scope": "primary",
+      "sha256": "ae5b86b0a87f3de2fc8e50048c1b37d889d27c1b391a1ac7e40d2360824cb40b"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/inductive_imf/v1.yaml",
+      "config_sha256": "7f04f9f04a779746bc84ebea370682287ed14d53cde355068abc295a73798b14",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/inductive_imf/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 1872,
+      "scope": "primary",
+      "sha256": "22292acabab2002fc26b7850f501ffd7f91012d21aa1961652ecf5cd659cb819"
+    },
+    {
+      "config_path": "configs/experiments/v6/explore_synthetic/split/v1.yaml",
+      "config_sha256": "14251636c986f14f6dbdd00070f0362a51a3ecd21756266676e4266510a441a5",
+      "expected_manifest_path": "experiments/manifests/v6/model/explore_synthetic/split/v1.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "ordinary",
+      "row_count": 1872,
+      "scope": "primary",
+      "sha256": "071ba0d74362edd17ff1cf68d8a8fac6a199aed35673612cdbeb88c9682b1470"
+    },
+    {
+      "config_path": "configs/experiments/v6/hpo/genetic/v1.yaml",
+      "config_sha256": "159743926b4fa77bcc46d6050ced9d2cb7b3e729d3f37284a0a4ffa6068897d0",
+      "expected_manifest_path": "experiments/manifests/v6/hpo/genetic/v1/studies.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "hpo-study",
+      "row_count": 215,
+      "scope": "hpo",
+      "sha256": "9da85ef44d739b47cfa83198a61c1a2e26cb894070265814f1f77988cef47cb7"
+    },
+    {
+      "config_path": "configs/experiments/v6/hpo/heuristic_classic/v1.yaml",
+      "config_sha256": "013252f1d14dae7ab2f83198e613875a5fd532cf86715acb882eb2cbbdf68637",
+      "expected_manifest_path": "experiments/manifests/v6/hpo/heuristic_classic/v1/studies.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "hpo-study",
+      "row_count": 215,
+      "scope": "hpo",
+      "sha256": "ff79576350ba86c96de995ec4a3cde1172a92362b7ed2b5b804723f5d2b503eb"
+    },
+    {
+      "config_path": "configs/experiments/v6/hpo/heuristic_plusplus/v1.yaml",
+      "config_sha256": "5a3d39d102cbb9265346c3b2a722ae98b5c3664875129715548887c21f72aff2",
+      "expected_manifest_path": "experiments/manifests/v6/hpo/heuristic_plusplus/v1/studies.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "hpo-study",
+      "row_count": 215,
+      "scope": "hpo",
+      "sha256": "6adf4840e9f0ec31994951c71e52eff819778c1b3c9cb61f6a033d37cbb61d8c"
+    },
+    {
+      "config_path": "configs/experiments/v6/hpo/ilp/v1.yaml",
+      "config_sha256": "8e80c9852c9d6a043389c96c19767131a026af92c13c78da8c9748c11ac9adde",
+      "expected_manifest_path": "experiments/manifests/v6/hpo/ilp/v1/studies.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "hpo-study",
+      "row_count": 215,
+      "scope": "hpo",
+      "sha256": "fee245151f727443483d7596bc7c61986112243d0a8b6905ee457a330e2b10aa"
+    },
+    {
+      "config_path": "configs/experiments/v6/hpo/inductive_imf/v1.yaml",
+      "config_sha256": "eb504820f51d926a16c8a528af238f06cbf3891d1f4c6b399b479312f7d3a627",
+      "expected_manifest_path": "experiments/manifests/v6/hpo/inductive_imf/v1/studies.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "hpo-study",
+      "row_count": 215,
+      "scope": "hpo",
+      "sha256": "798dbdfb8ff91c6e8a3170895dd41fa1b3ab5e91189470bbaf86ac380dc986ec"
+    },
+    {
+      "config_path": "configs/experiments/v6/hpo/split/v1.yaml",
+      "config_sha256": "634cc860eceb6a000e70d19ce6c6f1966722e699deb5993092940be308dfcb17",
+      "expected_manifest_path": "experiments/manifests/v6/hpo/split/v1/studies.csv",
+      "generator_sha256": "ec2302ab004be9c02386b759e3b32ac0c2526992a2424bc20427d521d1c93884",
+      "kind": "hpo-study",
+      "row_count": 215,
+      "scope": "hpo",
+      "sha256": "38d04754519939a9f4993fe3f018e50ec9a46d6b97927137034b42620ee1eaf0"
+    }
+  ],
+  "schema_version": 2,
+  "survey_manifest_count": 10
+}

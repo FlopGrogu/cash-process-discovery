@@ -1,0 +1,17 @@
+experiment_id: v6_default_run_survey_ilp_v1
+logs_from: ../../baseline/alpha_classic/v1.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/default_run_survey/ilp
+  log_dir: logs/slurm/v6/model/default_run_survey/ilp/v1
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/default_run_survey/ilp/v1.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: ilp_miner
+    algorithm_id: ilp_miner
+    backend: pm4py
+    model_type: petri_net
+    runtime_params: [discovery_timeout_seconds]
+    default_params: {alpha: 1.0, discovery_timeout_seconds: 86400}
+    configs: [{}]

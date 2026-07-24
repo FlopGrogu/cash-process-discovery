@@ -1,0 +1,23 @@
+algorithm_id: alpha_miner
+display_name: Alpha Miner
+backend: pm4py
+supported: true
+pm4py_api:
+  simplified_functions:
+    classic: pm4py.discovery.discover_petri_net_alpha
+    plus: pm4py.discovery.discover_petri_net_alpha_plus
+  lower_level_module: pm4py.algo.discovery.alpha.algorithm
+model_type: petri_net
+default_params:
+  variant: classic
+  discovery_timeout_seconds: 86400
+runtime_params:
+  - discovery_timeout_seconds
+search_space:
+  variant:
+    type: categorical
+    values: [classic, plus]
+notes:
+  - "Alpha Miner has no meaningful numeric hyperparameters in the public PM4Py API."
+  - "Alpha+ is PM4Py-supported but deprecated in the simplified API; keep it optional and documented."
+  - "discovery_timeout_seconds is a runner-level 24-hour limit and is not passed to PM4Py."

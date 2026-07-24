@@ -1,0 +1,29 @@
+experiment_id: v6_default_run_survey_split_v1
+logs_from: ../../baseline/alpha_classic/v1.yaml
+seeds: [42]
+output:
+  results_dir: results/cluster/v6/model/default_run_survey/split
+  log_dir: logs/slurm/v6/model/default_run_survey/split/v1
+  output_path_template: "{results_dir}/{log_id}/{config_hash}.json"
+manifest_path: experiments/manifests/v6/model/default_run_survey/split/v1.csv
+metrics: {enabled: false, profile: token, names: [fitness, precision, generalization, simplicity], export_model: true}
+algorithms:
+  - name: split_miner
+    algorithm_id: split_miner
+    backend: external
+    model_type: bpmn
+    runtime_params: [timeout_seconds]
+    default_params:
+      jar_path: data/external/split-miner-1.7.1-all.jar
+      jar_sha256: 472c006623d99a6e440aa93a58e29b867cc331cec2b12b3d7fb61fb2a5de8328
+      jar_env_var: SPLIT_MINER_JAR
+      java_bin: null
+      java_options: [-Xms64m, -Xmx3g, -XX:MaxMetaspaceSize=256m, -Xss512k, -Djava.awt.headless=true]
+      timeout_seconds: 86400
+      epsilon: 0.1
+      eta: 0.2
+      parallelismFirst: false
+      removeLoopActivityMarkers: false
+      replaceIORs: false
+      diagram: false
+    configs: [{}]

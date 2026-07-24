@@ -1,0 +1,62 @@
+algorithm_id: heuristics_miner
+display_name: Heuristics Miner
+backend: pm4py
+supported: true
+pm4py_api:
+  simplified_function: pm4py.discovery.discover_petri_net_heuristics
+  lower_level_module: pm4py.algo.discovery.heuristics.algorithm
+  variant_enum:
+    classic: Variants.CLASSIC
+    plusplus: Variants.PLUSPLUS
+model_type: petri_net
+default_params:
+  variant: classic
+  dependency_threshold: 0.5
+  and_threshold: 0.65
+  loop_two_threshold: 0.5
+  min_act_count: 1
+  min_dfg_occurrences: 1
+  dfg_pre_cleaning_noise_thresh: 0.0
+  recursion_limit: 10000
+  discovery_timeout_seconds: 86400
+parameter_mapping:
+  dependency_threshold: DEPENDENCY_THRESH
+  and_threshold: AND_MEASURE_THRESH
+  loop_two_threshold: LOOP_LENGTH_TWO_THRESH
+  min_act_count: MIN_ACT_COUNT
+  min_dfg_occurrences: MIN_DFG_OCCURRENCES
+  dfg_pre_cleaning_noise_thresh: DFG_PRE_CLEANING_NOISE_THRESH
+runtime_params:
+  - discovery_timeout_seconds
+  - recursion_limit
+search_space:
+  variant:
+    type: categorical
+    values: [classic, plusplus]
+  dependency_threshold:
+    type: float
+    values: [0.3, 0.5, 0.7, 0.9]
+  and_threshold:
+    type: float
+    values: [0.3, 0.5, 0.65, 0.8]
+  loop_two_threshold:
+    type: float
+    values: [0.3, 0.5, 0.7, 0.8, 0.9]
+  min_act_count:
+    type: integer
+    values: [1, 2, 5, 10]
+  min_dfg_occurrences:
+    type: integer
+    values: [1, 2, 5, 10]
+  dfg_pre_cleaning_noise_thresh:
+    type: float
+    values: [0.0, 0.05, 0.1, 0.2]
+notes:
+  - "Variants CLASSIC and PLUSPLUS are exposed by PM4Py's lower-level heuristics algorithm module."
+  - "dependency_threshold controls how strong directly-follows dependencies must be."
+  - "and_threshold controls parallelism detection."
+  - "loop_two_threshold controls detection of length-two loops."
+  - "min_act_count and min_dfg_occurrences filter rare activities/edges."
+  - "dfg_pre_cleaning_noise_thresh controls pre-cleaning noise filtering."
+  - "discovery_timeout_seconds is a runner-level 24-hour limit that is not passed to PM4Py."
+  - "recursion_limit is a runner-level execution control used for discovery/result serialization and is not passed to PM4Py."
