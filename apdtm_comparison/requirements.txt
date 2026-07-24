@@ -1,0 +1,7 @@
+pm4py>=2.7.22
+scikit-learn==1.6.1
+optuna>=4.0
+pandas>=2.0
+numpy>=2.0
+networkx>=3.4
+streamlit>=1.36

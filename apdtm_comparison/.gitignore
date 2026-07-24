@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Raw or generated artifacts that exceed GitHub's regular file-size limit.
+data/raw.zip
+*.joblib
+*.xes
+
+# Large upstream example logs are not required for the comparison notebook.
+vendor/process_discovery_meta_learning/event_logs/

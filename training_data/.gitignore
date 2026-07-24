@@ -115,3 +115,9 @@ tmp/
 outputs/
 submission-dist/
 .cmds
+
+# Submission comparison package: keep the small prepared inputs/results.
+!apdtm_comparison/data/
+!apdtm_comparison/data/**
+!apdtm_comparison/outputs/
+!apdtm_comparison/outputs/**

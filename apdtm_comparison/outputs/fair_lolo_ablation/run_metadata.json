@@ -1,0 +1,35 @@
+{
+  "n_real_test_logs": 18,
+  "real_test_logs": [
+    "bpi2012",
+    "bpi2013_closed_problems",
+    "bpi2013_incidents",
+    "bpi2013_open_problems",
+    "bpi2017",
+    "bpi2020_domestic",
+    "bpi2020_international",
+    "bpi2020_payment",
+    "bpi2020_permit",
+    "bpi2020_prepaid",
+    "bpic15_1",
+    "bpic15_2",
+    "bpic15_3",
+    "bpic15_4",
+    "bpic15_5",
+    "hospital_billing",
+    "road_traffic_fines",
+    "sepsis"
+  ],
+  "n_cash_rows": 40388,
+  "n_cash_logs": 215,
+  "n_apdtm_original_meta_instances": 801,
+  "n_cash_apdtm_meta_instances": 16,
+  "cash_feature_count": 48,
+  "apdtm_feature_count": 93,
+  "outputs": {
+    "setup_manifest": "/Users/poiss/Downloads/apdtm_comparison 5/outputs/fair_lolo_ablation/setup_manifest.csv",
+    "lolo_results": "/Users/poiss/Downloads/apdtm_comparison 5/outputs/fair_lolo_ablation/lolo_results.csv",
+    "lolo_summary": "/Users/poiss/Downloads/apdtm_comparison 5/outputs/fair_lolo_ablation/lolo_summary.csv",
+    "model_manifest": "/Users/poiss/Downloads/apdtm_comparison 5/outputs/fair_lolo_ablation/model_manifest.csv"
+  }
+}
