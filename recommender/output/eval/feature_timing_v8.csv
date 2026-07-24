@@ -1,0 +1,6 @@
+log_id,cases,events,ours_48_s,proreco_162_s
+bpi2013_open_problems,819,2351,0.1,4.2
+sepsis,1050,15214,0.3,36.9
+bpi2012,13087,262200,4.4,903.0
+bpi2017,31509,1202267,20.4,>10800 (stopped after 3 h)
+road_traffic_fines,150370,561470,21.8,not run (job stopped)

@@ -1,0 +1,346 @@
+column,group,measure,importance
+rs4pd_distinct_traces,log feature,fitness,0.0035932502666370355
+rs4pd_total_traces,log feature,fitness,0.0055265680164692625
+rs4pd_trace_length_avg,log feature,fitness,0.005403027772593789
+rs4pd_repetitions_intra_trace_avg,log feature,fitness,0.007302695584180991
+rs4pd_distinct_events,log feature,fitness,0.006376220209271926
+rs4pd_total_events,log feature,fitness,0.007509957660651858
+rs4pd_start_events,log feature,fitness,0.002673518357040489
+rs4pd_end_events,log feature,fitness,0.003868660920603797
+rs4pd_flow_entropy,log feature,fitness,0.014294044903186046
+rs4pd_flow_concurrency_ratio,log feature,fitness,0.010945623565270119
+rs4pd_flow_density,log feature,fitness,0.002450342124746227
+rs4pd_length_one_loops_count,log feature,fitness,0.005016046373174999
+ratio_unique_traces_per_trace,log feature,fitness,0.027242576492610023
+ratio_most_common_variant,log feature,fitness,0.003580784406041355
+ratio_top_1_variants,log feature,fitness,0.003866276279686346
+ratio_top_5_variants,log feature,fitness,0.002088810930399469
+ratio_top_10_variants,log feature,fitness,0.002874158858310415
+ratio_top_3_variants_custom,log feature,fitness,0.0036468488361548618
+trace_entropy,log feature,fitness,0.004570257793732277
+trace_len_min,log feature,fitness,0.002491497486805823
+trace_len_max,log feature,fitness,0.004758428440002339
+trace_len_median,log feature,fitness,0.003761105940104796
+trace_len_std,log feature,fitness,0.0044555053144809805
+trace_len_iqr,log feature,fitness,0.0027504593531959315
+trace_len_p90_custom,log feature,fitness,0.0030990777391081024
+start_activities_max,log feature,fitness,0.0031799595866810696
+end_activities_max,log feature,fitness,0.007411585834259335
+start_event_entropy_custom,log feature,fitness,0.002883402521334005
+end_event_entropy_custom,log feature,fitness,0.0035520882913096883
+most_common_start_share_custom,log feature,fitness,0.0027682922157659033
+most_common_end_share_custom,log feature,fitness,0.00552389289715861
+activity_entropy_custom,log feature,fitness,0.005865779981849799
+most_common_activity_share_custom,log feature,fitness,0.007568243550782086
+rare_activity_ratio_custom,log feature,fitness,0.0006980281909061161
+number_of_arcs,log feature,fitness,0.009155110341322674
+average_node_degree,log feature,fitness,0.009240009163258976
+maximum_node_degree,log feature,fitness,0.04182527765259128
+density,log feature,fitness,0.004151445922950532
+dfg_entropy_variable_degree,log feature,fitness,0.00879644492970216
+dfg_edge_entropy_custom,log feature,fitness,0.023345345969519773
+top_dfg_edge_share_custom,log feature,fitness,0.00582246483418478
+length_one_loops,log feature,fitness,0.007090938526171296
+relative_number_of_traces_with_repetition,log feature,fitness,0.006473527263665407
+avg_event_repetition_intra_trace,log feature,fitness,0.005988122059362401
+length_two_loops_custom,log feature,fitness,0.012831792775938839
+prefix_entropy,log feature,fitness,0.04050617092740289
+prefix_entropy_2_custom,log feature,fitness,0.003166441517020216
+prefix_entropy_3_custom,log feature,fitness,0.00493327313459603
+and_threshold,hyperparameter,fitness,0.006021382613684147
+dependency_threshold,hyperparameter,fitness,0.011205622576542838
+dfg_pre_cleaning_noise_thresh,hyperparameter,fitness,0.010487160973001392
+loop_two_threshold,hyperparameter,fitness,0.001763699092907707
+min_act_count,hyperparameter,fitness,0.002624926079339782
+min_dfg_occurrences,hyperparameter,fitness,0.01900762645005739
+noise_threshold,hyperparameter,fitness,0.00974639882729677
+disable_fallthroughs,hyperparameter,fitness,0.02254220022955658
+generations,hyperparameter,fitness,0.002800030703722793
+population_size,hyperparameter,fitness,0.013221067367122454
+mutation_rate,hyperparameter,fitness,0.0018522568879495228
+crossover_rate,hyperparameter,fitness,0.0029517422139392073
+elitism_rate,hyperparameter,fitness,0.002062597745940748
+elitism_min_sample,hyperparameter,fitness,0.0023271911130870754
+alpha,hyperparameter,fitness,0.023952270178425373
+epsilon,hyperparameter,fitness,0.003653588778514131
+eta,hyperparameter,fitness,0.012126368066148488
+parallelismFirst,hyperparameter,fitness,0.002268753952124789
+removeLoopActivityMarkers,hyperparameter,fitness,0.003756145934799473
+replaceIORs,hyperparameter,fitness,0.0010990712530305504
+algorithm,algorithm,fitness,0.4776065172506157
+rs4pd_distinct_traces,log feature,precision,0.004455595540274393
+rs4pd_total_traces,log feature,precision,0.003160859630379358
+rs4pd_trace_length_avg,log feature,precision,0.00863300578971832
+rs4pd_repetitions_intra_trace_avg,log feature,precision,0.003333219170880094
+rs4pd_distinct_events,log feature,precision,0.0209650340514881
+rs4pd_total_events,log feature,precision,0.005765103192995936
+rs4pd_start_events,log feature,precision,0.005259262455249424
+rs4pd_end_events,log feature,precision,0.005546702344429752
+rs4pd_flow_entropy,log feature,precision,0.002329524692952585
+rs4pd_flow_concurrency_ratio,log feature,precision,0.011100333675379848
+rs4pd_flow_density,log feature,precision,0.008872009784028915
+rs4pd_length_one_loops_count,log feature,precision,0.003081372767613764
+ratio_unique_traces_per_trace,log feature,precision,0.0037185195851675767
+ratio_most_common_variant,log feature,precision,0.00369036833534491
+ratio_top_1_variants,log feature,precision,0.002977105280953098
+ratio_top_5_variants,log feature,precision,0.0027067014664664897
+ratio_top_10_variants,log feature,precision,0.004619446247859231
+ratio_top_3_variants_custom,log feature,precision,0.002390439121999983
+trace_entropy,log feature,precision,0.0022988217027308617
+trace_len_min,log feature,precision,0.0034221752827137903
+trace_len_max,log feature,precision,0.004377783403021041
+trace_len_median,log feature,precision,0.015862254445394665
+trace_len_std,log feature,precision,0.018592136803690002
+trace_len_iqr,log feature,precision,0.0025220688565576375
+trace_len_p90_custom,log feature,precision,0.006963841432003192
+start_activities_max,log feature,precision,0.0025727355571539493
+end_activities_max,log feature,precision,0.004205679034466438
+start_event_entropy_custom,log feature,precision,0.003602683434054194
+end_event_entropy_custom,log feature,precision,0.003334793614577101
+most_common_start_share_custom,log feature,precision,0.00589574080805751
+most_common_end_share_custom,log feature,precision,0.0041457510976804545
+activity_entropy_custom,log feature,precision,0.33818923045844973
+most_common_activity_share_custom,log feature,precision,0.005020455028678874
+rare_activity_ratio_custom,log feature,precision,0.0011118092327906187
+number_of_arcs,log feature,precision,0.004456271029958217
+average_node_degree,log feature,precision,0.0054745552267904335
+maximum_node_degree,log feature,precision,0.005014594895760178
+density,log feature,precision,0.008772647593100823
+dfg_entropy_variable_degree,log feature,precision,0.016864288938827392
+dfg_edge_entropy_custom,log feature,precision,0.002282747517748043
+top_dfg_edge_share_custom,log feature,precision,0.009003361398118099
+length_one_loops,log feature,precision,0.007489414448445476
+relative_number_of_traces_with_repetition,log feature,precision,0.004376448842376372
+avg_event_repetition_intra_trace,log feature,precision,0.002797691282158505
+length_two_loops_custom,log feature,precision,0.00859627126692735
+prefix_entropy,log feature,precision,0.007176436136041984
+prefix_entropy_2_custom,log feature,precision,0.0074933822445193065
+prefix_entropy_3_custom,log feature,precision,0.003729426288063997
+and_threshold,hyperparameter,precision,0.004421906387767452
+dependency_threshold,hyperparameter,precision,0.012394185297338812
+dfg_pre_cleaning_noise_thresh,hyperparameter,precision,0.008312270723933389
+loop_two_threshold,hyperparameter,precision,0.0031735231759507155
+min_act_count,hyperparameter,precision,0.012299193082007685
+min_dfg_occurrences,hyperparameter,precision,0.024447635213401986
+noise_threshold,hyperparameter,precision,0.004825723488180479
+disable_fallthroughs,hyperparameter,precision,0.003607572639018536
+generations,hyperparameter,precision,0.0025744586819649415
+population_size,hyperparameter,precision,0.011906355370008817
+mutation_rate,hyperparameter,precision,0.0018037893611510714
+crossover_rate,hyperparameter,precision,0.0027727697732353347
+elitism_rate,hyperparameter,precision,0.002062871605367098
+elitism_min_sample,hyperparameter,precision,0.001965694892856052
+alpha,hyperparameter,precision,0.015910879165479064
+epsilon,hyperparameter,precision,0.0032065567774308603
+eta,hyperparameter,precision,0.00988446678687086
+parallelismFirst,hyperparameter,precision,0.0013429781082537962
+removeLoopActivityMarkers,hyperparameter,precision,0.0011852195859805156
+replaceIORs,hyperparameter,precision,0.0006554866270656449
+algorithm,algorithm,precision,0.2529963628226991
+rs4pd_distinct_traces,log feature,generalization,0.006082813001158729
+rs4pd_total_traces,log feature,generalization,0.00572531062228772
+rs4pd_trace_length_avg,log feature,generalization,0.003001192738904454
+rs4pd_repetitions_intra_trace_avg,log feature,generalization,0.0019793020448112437
+rs4pd_distinct_events,log feature,generalization,0.03022613264496997
+rs4pd_total_events,log feature,generalization,0.0051617736168367775
+rs4pd_start_events,log feature,generalization,0.0013903583124376517
+rs4pd_end_events,log feature,generalization,0.0038671574508096127
+rs4pd_flow_entropy,log feature,generalization,0.0016734309984698808
+rs4pd_flow_concurrency_ratio,log feature,generalization,0.004620595866523164
+rs4pd_flow_density,log feature,generalization,0.002908912335991852
+rs4pd_length_one_loops_count,log feature,generalization,0.00478500190798105
+ratio_unique_traces_per_trace,log feature,generalization,0.0024700934057741
+ratio_most_common_variant,log feature,generalization,0.002622763798865336
+ratio_top_1_variants,log feature,generalization,0.0016646815159759832
+ratio_top_5_variants,log feature,generalization,0.0017091740833951941
+ratio_top_10_variants,log feature,generalization,0.0022774424498242206
+ratio_top_3_variants_custom,log feature,generalization,0.0016581283179366146
+trace_entropy,log feature,generalization,0.004712408771910662
+trace_len_min,log feature,generalization,0.0009849078459291333
+trace_len_max,log feature,generalization,0.0030606171859362944
+trace_len_median,log feature,generalization,0.0014373400052535678
+trace_len_std,log feature,generalization,0.005460759778858671
+trace_len_iqr,log feature,generalization,0.0019430253111045303
+trace_len_p90_custom,log feature,generalization,0.004315903805512367
+start_activities_max,log feature,generalization,0.002828038528631602
+end_activities_max,log feature,generalization,0.004830056912760194
+start_event_entropy_custom,log feature,generalization,0.002006027174441701
+end_event_entropy_custom,log feature,generalization,0.003165420908470687
+most_common_start_share_custom,log feature,generalization,0.002213764833359297
+most_common_end_share_custom,log feature,generalization,0.0027008402540255093
+activity_entropy_custom,log feature,generalization,0.003448078340123104
+most_common_activity_share_custom,log feature,generalization,0.003065232589629566
+rare_activity_ratio_custom,log feature,generalization,0.001292597286674677
+number_of_arcs,log feature,generalization,0.027197957134620945
+average_node_degree,log feature,generalization,0.005108399249636901
+maximum_node_degree,log feature,generalization,0.14354637503619824
+density,log feature,generalization,0.0029549993004688298
+dfg_entropy_variable_degree,log feature,generalization,0.019874741543032058
+dfg_edge_entropy_custom,log feature,generalization,0.0016543387499371326
+top_dfg_edge_share_custom,log feature,generalization,0.002460470265972042
+length_one_loops,log feature,generalization,0.0022017981399638617
+relative_number_of_traces_with_repetition,log feature,generalization,0.0028177654414300126
+avg_event_repetition_intra_trace,log feature,generalization,0.0018752077809541109
+length_two_loops_custom,log feature,generalization,0.007906990978958089
+prefix_entropy,log feature,generalization,0.03472515174054261
+prefix_entropy_2_custom,log feature,generalization,0.0016856447920652689
+prefix_entropy_3_custom,log feature,generalization,0.0021493682163138622
+and_threshold,hyperparameter,generalization,0.0021674780027805506
+dependency_threshold,hyperparameter,generalization,0.0036646420698257663
+dfg_pre_cleaning_noise_thresh,hyperparameter,generalization,0.008744094481279269
+loop_two_threshold,hyperparameter,generalization,0.0015482036970515367
+min_act_count,hyperparameter,generalization,0.002771939874779671
+min_dfg_occurrences,hyperparameter,generalization,0.03182562814900004
+noise_threshold,hyperparameter,generalization,0.00944541306229134
+disable_fallthroughs,hyperparameter,generalization,0.019534588105115245
+generations,hyperparameter,generalization,0.0041784074979003645
+population_size,hyperparameter,generalization,0.02311550449179656
+mutation_rate,hyperparameter,generalization,0.002852224809048227
+crossover_rate,hyperparameter,generalization,0.0047279763483362835
+elitism_rate,hyperparameter,generalization,0.0032077254885200367
+elitism_min_sample,hyperparameter,generalization,0.003314622209292228
+alpha,hyperparameter,generalization,0.03742510762437566
+epsilon,hyperparameter,generalization,0.004034591309480132
+eta,hyperparameter,generalization,0.01670153462164154
+parallelismFirst,hyperparameter,generalization,0.0016109565039407437
+removeLoopActivityMarkers,hyperparameter,generalization,0.0012689491803210893
+replaceIORs,hyperparameter,generalization,0.0007250439806199155
+algorithm,algorithm,generalization,0.42968687547693474
+rs4pd_distinct_traces,log feature,simplicity,0.008028833367098122
+rs4pd_total_traces,log feature,simplicity,0.01246514406022139
+rs4pd_trace_length_avg,log feature,simplicity,0.003924075841054869
+rs4pd_repetitions_intra_trace_avg,log feature,simplicity,0.001510990371200861
+rs4pd_distinct_events,log feature,simplicity,0.018824066065138423
+rs4pd_total_events,log feature,simplicity,0.008161947620978079
+rs4pd_start_events,log feature,simplicity,0.003178279261758395
+rs4pd_end_events,log feature,simplicity,0.17130563487615533
+rs4pd_flow_entropy,log feature,simplicity,0.0021248684968890024
+rs4pd_flow_concurrency_ratio,log feature,simplicity,0.006349018155761522
+rs4pd_flow_density,log feature,simplicity,0.019085571153857846
+rs4pd_length_one_loops_count,log feature,simplicity,0.003684906298637958
+ratio_unique_traces_per_trace,log feature,simplicity,0.003130113030993925
+ratio_most_common_variant,log feature,simplicity,0.004889545177939833
+ratio_top_1_variants,log feature,simplicity,0.001781914145238744
+ratio_top_5_variants,log feature,simplicity,0.001958576528081882
+ratio_top_10_variants,log feature,simplicity,0.0021412555496657655
+ratio_top_3_variants_custom,log feature,simplicity,0.00218043725253297
+trace_entropy,log feature,simplicity,0.004753598032579593
+trace_len_min,log feature,simplicity,0.0016006702195879594
+trace_len_max,log feature,simplicity,0.003150348420152279
+trace_len_median,log feature,simplicity,0.002097453210791308
+trace_len_std,log feature,simplicity,0.004497011047601972
+trace_len_iqr,log feature,simplicity,0.0030386215215074935
+trace_len_p90_custom,log feature,simplicity,0.0035684403210763296
+start_activities_max,log feature,simplicity,0.003956007146915431
+end_activities_max,log feature,simplicity,0.0036507199140907217
+start_event_entropy_custom,log feature,simplicity,0.0022848088925619694
+end_event_entropy_custom,log feature,simplicity,0.0037124532287463098
+most_common_start_share_custom,log feature,simplicity,0.0024884420925642228
+most_common_end_share_custom,log feature,simplicity,0.003733967653604053
+activity_entropy_custom,log feature,simplicity,0.00381677384996809
+most_common_activity_share_custom,log feature,simplicity,0.0031535998023991545
+rare_activity_ratio_custom,log feature,simplicity,0.0007882124645113052
+number_of_arcs,log feature,simplicity,0.010040503093904496
+average_node_degree,log feature,simplicity,0.008978423146043874
+maximum_node_degree,log feature,simplicity,0.05695163856586327
+density,log feature,simplicity,0.003754683783944938
+dfg_entropy_variable_degree,log feature,simplicity,0.027985111703242277
+dfg_edge_entropy_custom,log feature,simplicity,0.002037585935667567
+top_dfg_edge_share_custom,log feature,simplicity,0.003203859677982027
+length_one_loops,log feature,simplicity,0.010521558848465808
+relative_number_of_traces_with_repetition,log feature,simplicity,0.003334863182585965
+avg_event_repetition_intra_trace,log feature,simplicity,0.0016857674504579324
+length_two_loops_custom,log feature,simplicity,0.0043903485547161
+prefix_entropy,log feature,simplicity,0.01649075719208015
+prefix_entropy_2_custom,log feature,simplicity,0.003219469491373218
+prefix_entropy_3_custom,log feature,simplicity,0.01570877793067148
+and_threshold,hyperparameter,simplicity,0.002780810943283529
+dependency_threshold,hyperparameter,simplicity,0.008884787634965726
+dfg_pre_cleaning_noise_thresh,hyperparameter,simplicity,0.011144239609736253
+loop_two_threshold,hyperparameter,simplicity,0.001830689419604182
+min_act_count,hyperparameter,simplicity,0.006119014767045159
+min_dfg_occurrences,hyperparameter,simplicity,0.051314739085165435
+noise_threshold,hyperparameter,simplicity,0.005402191512308224
+disable_fallthroughs,hyperparameter,simplicity,0.004933563058284878
+generations,hyperparameter,simplicity,0.0047212231019305275
+population_size,hyperparameter,simplicity,0.03159057134960666
+mutation_rate,hyperparameter,simplicity,0.003102916197890396
+crossover_rate,hyperparameter,simplicity,0.007269651279290621
+elitism_rate,hyperparameter,simplicity,0.003383282892725377
+elitism_min_sample,hyperparameter,simplicity,0.004567400097905032
+alpha,hyperparameter,simplicity,0.052821594817517116
+epsilon,hyperparameter,simplicity,0.002659707064115656
+eta,hyperparameter,simplicity,0.012267238721082357
+parallelismFirst,hyperparameter,simplicity,0.001123855621377967
+removeLoopActivityMarkers,hyperparameter,simplicity,0.001206028653270989
+replaceIORs,hyperparameter,simplicity,0.0021534257969430017
+algorithm,algorithm,simplicity,0.2874034147470887
+rs4pd_distinct_traces,log feature,composite,0.00554012304379207
+rs4pd_total_traces,log feature,composite,0.006719470582339433
+rs4pd_trace_length_avg,log feature,composite,0.005240325535567858
+rs4pd_repetitions_intra_trace_avg,log feature,composite,0.003531551792768297
+rs4pd_distinct_events,log feature,composite,0.019097863242717103
+rs4pd_total_events,log feature,composite,0.006649695522865663
+rs4pd_start_events,log feature,composite,0.00312535459662149
+rs4pd_end_events,log feature,composite,0.04614703889799962
+rs4pd_flow_entropy,log feature,composite,0.005105467272874378
+rs4pd_flow_concurrency_ratio,log feature,composite,0.008253892815733663
+rs4pd_flow_density,log feature,composite,0.00832920884965621
+rs4pd_length_one_loops_count,log feature,composite,0.004141831836851943
+ratio_unique_traces_per_trace,log feature,composite,0.009140325628636406
+ratio_most_common_variant,log feature,composite,0.0036958654295478587
+ratio_top_1_variants,log feature,composite,0.0025724943054635427
+ratio_top_5_variants,log feature,composite,0.0021158157520857587
+ratio_top_10_variants,log feature,composite,0.0029780757764149082
+ratio_top_3_variants_custom,log feature,composite,0.0024689633821561073
+trace_entropy,log feature,composite,0.004083771575238348
+trace_len_min,log feature,composite,0.0021248127087591766
+trace_len_max,log feature,composite,0.003836794362277988
+trace_len_median,log feature,composite,0.005789538400386084
+trace_len_std,log feature,composite,0.008251353236157907
+trace_len_iqr,log feature,composite,0.002563543760591398
+trace_len_p90_custom,log feature,composite,0.004486815824424999
+start_activities_max,log feature,composite,0.0031341852048455132
+end_activities_max,log feature,composite,0.005024510423894173
+start_event_entropy_custom,log feature,composite,0.0026942305055979673
+end_event_entropy_custom,log feature,composite,0.0034411890107759464
+most_common_start_share_custom,log feature,composite,0.003341559987436733
+most_common_end_share_custom,log feature,composite,0.004026112975617157
+activity_entropy_custom,log feature,composite,0.08782996565759768
+most_common_activity_share_custom,log feature,composite,0.00470188274287242
+rare_activity_ratio_custom,log feature,composite,0.0009726617937206792
+number_of_arcs,log feature,composite,0.012712460399951582
+average_node_degree,log feature,composite,0.007200346696432546
+maximum_node_degree,log feature,composite,0.06183447153760324
+density,log feature,composite,0.004908444150116281
+dfg_entropy_variable_degree,log feature,composite,0.018380146778700972
+dfg_edge_entropy_custom,log feature,composite,0.007330004543218129
+top_dfg_edge_share_custom,log feature,composite,0.005122539044064237
+length_one_loops,log feature,composite,0.006825927490761611
+relative_number_of_traces_with_repetition,log feature,composite,0.004250651182514439
+avg_event_repetition_intra_trace,log feature,composite,0.003086697143233237
+length_two_loops_custom,log feature,composite,0.008431350894135095
+prefix_entropy,log feature,composite,0.02472462899901691
+prefix_entropy_2_custom,log feature,composite,0.003891234511244503
+prefix_entropy_3_custom,log feature,composite,0.006630211392411343
+and_threshold,hyperparameter,composite,0.0038478944868789197
+dependency_threshold,hyperparameter,composite,0.009037309394668284
+dfg_pre_cleaning_noise_thresh,hyperparameter,composite,0.009671941446987575
+loop_two_threshold,hyperparameter,composite,0.002079028846378535
+min_act_count,hyperparameter,composite,0.005953768450793074
+min_dfg_occurrences,hyperparameter,composite,0.03164890722440621
+noise_threshold,hyperparameter,composite,0.007354931722519203
+disable_fallthroughs,hyperparameter,composite,0.01265448100799381
+generations,hyperparameter,composite,0.0035685299963796567
+population_size,hyperparameter,composite,0.019958374644633622
+mutation_rate,hyperparameter,composite,0.002402796814009804
+crossover_rate,hyperparameter,composite,0.004430534903700362
+elitism_rate,hyperparameter,composite,0.002679119433138315
+elitism_min_sample,hyperparameter,composite,0.0030437270782850967
+alpha,hyperparameter,composite,0.0325274629464493
+epsilon,hyperparameter,composite,0.0033886109823851947
+eta,hyperparameter,composite,0.012744902048935813
+parallelismFirst,hyperparameter,composite,0.001586636046424324
+removeLoopActivityMarkers,hyperparameter,composite,0.0018540858385930168
+replaceIORs,hyperparameter,composite,0.0011582569144147781
+algorithm,algorithm,composite,0.3619232925743346

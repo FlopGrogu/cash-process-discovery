@@ -1,0 +1,6 @@
+block,system,baseline,win,tie,loss
+decomposition,PR-162,PR-real,531,2003,496
+decomposition,PR-pooled,PR-real,593,1875,562
+decomposition,RF-RFE,PR-real,444,2251,335
+decomposition,Ours-RF-162,PR-real,593,1947,490
+decomposition,CASH-48,PR-real,583,1941,506

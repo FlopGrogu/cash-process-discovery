@@ -1,0 +1,4 @@
+group,fitness,precision,generalization,simplicity,composite
+algorithm,0.4776,0.253,0.4297,0.2874,0.3619
+hyperparameter,0.1555,0.1288,0.1829,0.2193,0.1716
+log feature,0.3669,0.6183,0.3874,0.4933,0.4665

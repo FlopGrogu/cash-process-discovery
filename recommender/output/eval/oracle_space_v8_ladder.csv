@@ -1,0 +1,4 @@
+rung,minmax_accuracy
+oracle_best_of_defaults,0.8941
+oracle_best_shared_tuned,0.9897
+oracle_full_grid,1.0

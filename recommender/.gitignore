@@ -1,0 +1,12 @@
+env*
+output/*
+!output/eval/
+output/eval/*
+!output/eval/*.csv
+.DS_Store
+**/__pycache__/
+# Not needed on cluster
+experiments.ipynb
+results/
+tests/
+event-logs/
