@@ -3,6 +3,9 @@ output/*
 !output/eval/
 output/eval/*
 !output/eval/*.csv
+!output/datasets/
+output/datasets/*
+!output/datasets/dataset_v8.csv
 .DS_Store
 **/__pycache__/
 # Not needed on cluster
